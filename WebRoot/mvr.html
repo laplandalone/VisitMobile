@@ -18,7 +18,7 @@
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
-								<legend>患者目前恢复情况：</legend>
+								<legend>一、患者目前恢复情况：</legend>
 								<label for="red">很好</label><input type="radio" name="patient_recover" id="red" value="0">
 		          				<label for="green">一般</label><input type="radio" name="patient_recover" id="green" value="1">
 		          				<label for="blue">ICU/CCU自动出院</label><input type="radio" name="patient_recover" id="blue" value="2">	
@@ -37,17 +37,17 @@
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
-								<legend>活动情况：</legend>
-								<label for="red">正常工作及生活</label><input type="radio" name="activity_level" id="red" value="0">
-		          				<label for="green">可胜任日常轻微活动</label><input type="radio" name="activity_level" id="green" value="1">
-		          				<label for="blue">稍活动喘气，日常活动受限</label><input type="radio" name="activity_level" id="blue" value="2">	
-								<label for="gary">卧床</label><input type="radio" name="activity_level" id="gary" value="3">	
+								<legend>二、活动情况：</legend>
+								<label for="red">正常工作及生活</label><input type="radio" name="activity" id="red" value="0">
+		          				<label for="green">可胜任日常轻微活动</label><input type="radio" name="activity" id="green" value="1">
+		          				<label for="blue">稍活动喘气，日常活动受限</label><input type="radio" name="activity" id="blue" value="2">	
+								<label for="gary">卧床</label><input type="radio" name="activity" id="gary" value="3">	
 							</fieldset>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="is_complications">出院后是否发生以下并发症：</label>
+							<label for="is_complications">三、出院后是否发生以下并发症：</label>
 							<select name="is_complications" id="is_complications" data-role="slider">
 								<option value="on">有</option>
 	     				 		<option value="off">无</option>
@@ -68,7 +68,7 @@
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
-								<legend>是否出现肾功能不全：</legend>
+								<legend>四、是否出现肾功能不全：</legend>
 								<label for="red">未复查</label><input type="radio" name="renal_insufficiency" id="red" value="0">
 	          					<label for="green">否</label><input type="radio" name="renal_insufficiency" id="green" value="1">
 	          					<label for="blue">是</label><input type="radio" name="renal_insufficiency" id="blue" value="2">	
@@ -86,7 +86,7 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="readmission">出院后有无因心脏原因再次入院：</label>
+							<label for="readmission">五、出院后有无因心脏原因再次入院：</label>
 							<select name="is_readmission" id="is_readmission" data-role="slider">
 								<option value="on">有</option>
 	     				 		<option value="off">无</option>
@@ -99,7 +99,7 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="colour_ultrasound_check">近期是否进行彩超检查：</label>
+							<label for="colour_ultrasound_check">六、近期是否进行彩超检查：</label>
 							<select name="colour_ultrasound_check" id="colour_ultrasound_check" data-role="slider">
 								<option value="on">是</option>
 	     				 		<option value="off">否</option>
@@ -202,7 +202,7 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="other_surgery">出院后有无接受其他手术：</label>
+							<label for="other_surgery">七、出院后有无接受其他手术：</label>
 							<select name="other_surgery" id="other_surgery" data-role="slider">
 								<option value="on">有</option>
 	     				 		<option value="off">无</option>
@@ -216,7 +216,7 @@
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
-								<legend>有无房颤：</legend>
+								<legend>八、有无房颤：</legend>
 								<label for="red">未复查</label><input type="radio" name="atrial_fibrillation" id="red" value="0">
 	          					<label for="green">无</label><input type="radio" name="atrial_fibrillation" id="green" value="1">
 	          					<label for="blue">有</label><input type="radio" name="atrial_fibrillation" id="blue" value="2">	
@@ -228,7 +228,7 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="switch">是否每日按时服用华法令：</label>
+							<label for="switch">九、是否每日按时服用华法令：</label>
 							<select name="switch" id="switch" data-role="slider">
 								<option value="on">是</option>
 	     				 		<option value="off">否</option>
@@ -266,7 +266,7 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<legend>是否服用下列药物：</legend>
+							<legend>十、是否服用下列药物：</legend>
 							<table style="width: 100%">
 								<tr>
 									<td width="40%"><label for="sample_rehmannia">样地黄类：</label></td>
@@ -369,7 +369,7 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="blue">您对我院服务有无意见和建议，请详细注明：</label>
+							<label for="blue">十一、您对我院服务有无意见和建议，请详细注明：</label>
        						<textarea cols="40" rows="8" name="advice" id="advice"></textarea>
        						<label for="blue">联系方式更改：</label><input type="text" name="change_contact_way" id="change_contact_way">
        						<label for="blue">请提供新的联系电话：</label><input type="text" name="new_phone_nbr" id="new_phone_nbr">

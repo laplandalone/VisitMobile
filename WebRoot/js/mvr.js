@@ -1,5 +1,4 @@
-var complicationsTypeArray = new Array();
-
+var complicationsTypeArray;
 $(document).ready(function() {
 	$("#submit").click(function(){
 		if(!checkParam())
@@ -10,9 +9,12 @@ $(document).ready(function() {
 		{
 			var obj = new Object();
 			obj.patient_recover = $("[name='patient_recover']:checked").val();
-			obj.activity_level = $("[name='activity_level']:checked").val();
+			obj.activity_level = $("[name='activity']:checked").val();
 			obj.is_complications = $("#is_complications").val();
-			obj.complicationsTypeArray = complicationsTypeArray;
+			if(obj.is_complications == "on")
+			{
+				obj.complicationsTypeArray = complicationsTypeArray;
+			}
 			var param = JSON.stringify(obj);
 			$.ajax({
 				type:"POST",
@@ -47,7 +49,7 @@ function checkParam()
 		showPopupMessage("请选择患者目前的恢复情况!");
 		return false;
 	}
-	var activity_level = $("[name='activity_level']:checked").val();
+	var activity_level = $("[name='activity']:checked").val();
 	if(activity_level == "" || activity_level == null || activity_level == undefined)
 	{
 		showPopupMessage("请选择患者的活动情况!");
@@ -56,11 +58,12 @@ function checkParam()
 	var is_complications = $("#is_complications").val();
 	if(is_complications == "on")
 	{
+		complicationsTypeArray = new Array();
 		var count = 0
 		$("[name='complications_type']:checked").each(function(){
 			count++;
 			var obj = new Object();
-			obj.complications_type = $(this).val()
+			obj.complications_type = $(this).val();
 			complicationsTypeArray.push(obj);
 		});
 		if(count == 0)
