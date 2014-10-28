@@ -16,13 +16,13 @@
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
 								<legend>一、患者目前恢复情况：</legend>
-								<label for="red">很好</label><input type="radio" name="patient_recover" id="red" value="red">
-		          				<label for="green">一般</label><input type="radio" name="patient_recover" id="green" value="green">
-		          				<label for="blue">ICU/CCU自动出院</label><input type="patient_recover" name="favcolor" id="blue" value="blue">	
-								<label for="gary">好</label><input type="radio" name="patient_recover" id="gary" value="gary">	
-		           				<label for="white">差</label><input type="radio" name="patient_recover" id="white" value="white">	
-		           				<label for="black">死亡</label><input type="radio" name="patient_recover" id="black" value="black">	
-		           				<label for="yellow">有问题</label><input type="radio" name="patient_recover" id="yellow" value="yellow">
+								<label for="red">很好</label><input type="radio" name="patient_recover" id="red" value="0">
+		          				<label for="green">一般</label><input type="radio" name="patient_recover" id="green" value="1">
+		          				<label for="blue">ICU/CCU自动出院</label><input type="patient_recover" name="favcolor" id="blue" value="2">	
+								<label for="gary">好</label><input type="radio" name="patient_recover" id="gary" value="3">	
+		           				<label for="white">差</label><input type="radio" name="patient_recover" id="white" value="4">	
+		           				<label for="black">死亡</label><input type="radio" name="patient_recover" id="black" value="5">	
+		           				<label for="yellow">有问题</label><input type="radio" name="patient_recover" id="yellow" value="6">
 							</fieldset>
 							<div data-role="fieldcontain">
 								<label for="blue">问题描述：</label><input type="text" name="question_desc" id="question_desc">
@@ -35,11 +35,11 @@
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
 								<legend>二、活动时是否出现乏力、憋气或呼吸困难：</legend>
-								<label for="red">无</label><input type="radio" name="activities_situation" id="red" value="red">
-								<label for="black">剧烈活动时</label><input type="radio" name="activities_situation" id="black" value="black">
-		          				<label for="green">中等量活动时</label><input type="radio" name="activities_situation" id="green" value="green">
-		          				<label for="blue">轻微活动如穿衣时</label><input type="radio" name="activities_situation" id="blue" value="blue">	
-								<label for="gary">卧床休息时</label><input type="radio" name="activities_situation" id="gary" value="gary">	
+								<label for="red">无</label><input type="radio" name="activities_situation" id="red" value="0">
+								<label for="black">剧烈活动时</label><input type="radio" name="activities_situation" id="black" value="1">
+		          				<label for="green">中等量活动时</label><input type="radio" name="activities_situation" id="green" value="2">
+		          				<label for="blue">轻微活动如穿衣时</label><input type="radio" name="activities_situation" id="blue" value="3">	
+								<label for="gary">卧床休息时</label><input type="radio" name="activities_situation" id="gary" value="5">	
 							</fieldset>
 						</div>
 					</li>
@@ -47,9 +47,9 @@
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
 								<legend>三、是否有口唇发紫的情况：</legend>
-								<label for="red">无</label><input type="radio" name="oral_purple" id="red" value="red">
-		          				<label for="green">有，同术前</label><input type="radio" name="oral_purple" id="green" value="green">
-		          				<label for="blue">有，较术前重</label><input type="radio" name="oral_purple" id="blue" value="blue">	
+								<label for="red">无</label><input type="radio" name="oral_purple" id="red" value="0">
+		          				<label for="green">有，同术前</label><input type="radio" name="oral_purple" id="green" value="1">
+		          				<label for="blue">有，较术前重</label><input type="radio" name="oral_purple" id="blue" value="2">	
 							</fieldset>
 							<label for="ascites">有无腹水：</label>
 							<select name="ascites" id="ascites" data-role="slider">
@@ -156,52 +156,52 @@
 								</div>
 								<fieldset data-role="controlgroup">
 									<legend>主动脉关闭不全：</legend>
-									<label for="red">否</label><input type="radio" name="aortic_regurgitation" id="red" value="red">
-									<label for="green">轻度</label><input type="radio" name="aortic_regurgitation" id="green" value="green">
-			          				<label for="blue">中度</label><input type="radio" name="aortic_regurgitation" id="blue" value="blue">	
-			           				<label for="gary">重度</label><input type="radio" name="aortic_regurgitation" id="gary" value="gary">	
+									<label for="red">否</label><input type="radio" name="aortic_regurgitation" id="red" value="0">
+									<label for="green">轻度</label><input type="radio" name="aortic_regurgitation" id="green" value="1">
+			          				<label for="blue">中度</label><input type="radio" name="aortic_regurgitation" id="blue" value="2">	
+			           				<label for="gary">重度</label><input type="radio" name="aortic_regurgitation" id="gary" value="3">	
 								</fieldset>
 								<fieldset data-role="controlgroup">
 									<legend>二尖瓣狭窄：</legend>
-									<label for="red">否</label><input type="radio" name="mitral_stenosis" id="red" value="red">
-									<label for="green">轻度</label><input type="radio" name="mitral_stenosis" id="green" value="green">
-			          				<label for="blue">中度</label><input type="radio" name="mitral_stenosis" id="blue" value="blue">	
-			           				<label for="gary">重度</label><input type="radio" name="mitral_stenosis" id="gary" value="gary">	
+									<label for="red">否</label><input type="radio" name="mitral_stenosis" id="red" value="0">
+									<label for="green">轻度</label><input type="radio" name="mitral_stenosis" id="green" value="1">
+			          				<label for="blue">中度</label><input type="radio" name="mitral_stenosis" id="blue" value="2">	
+			           				<label for="gary">重度</label><input type="radio" name="mitral_stenosis" id="gary" value="3">	
 								</fieldset>
 								<fieldset data-role="controlgroup">
 									<legend>二尖瓣关闭不全：</legend>
-									<label for="red">否</label><input type="radio" name="mitral_insufficiency" id="red" value="red">
-									<label for="green">轻度</label><input type="radio" name="mitral_insufficiency" id="green" value="green">
-			          				<label for="blue">中度</label><input type="radio" name="mitral_insufficiency" id="blue" value="blue">	
-			           				<label for="gary">重度</label><input type="radio" name="mitral_insufficiency" id="gary" value="gary">	
+									<label for="red">否</label><input type="radio" name="mitral_insufficiency" id="red" value="0">
+									<label for="green">轻度</label><input type="radio" name="mitral_insufficiency" id="green" value="1">
+			          				<label for="blue">中度</label><input type="radio" name="mitral_insufficiency" id="blue" value="2">	
+			           				<label for="gary">重度</label><input type="radio" name="mitral_insufficiency" id="gary" value="3">	
 								</fieldset>
 								<fieldset data-role="controlgroup">
 									<legend>三尖瓣狭窄：</legend>
-									<label for="red">否</label><input type="radio" name="tricuspid_stenosis" id="red" value="red">
-									<label for="green">轻度</label><input type="radio" name="tricuspid_stenosis" id="green" value="green">
-			          				<label for="blue">中度</label><input type="radio" name="tricuspid_stenosis" id="blue" value="blue">	
-			           				<label for="gary">重度</label><input type="radio" name="tricuspid_stenosis" id="gary" value="gary">	
+									<label for="red">否</label><input type="radio" name="tricuspid_stenosis" id="red" value="0">
+									<label for="green">轻度</label><input type="radio" name="tricuspid_stenosis" id="green" value="1">
+			          				<label for="blue">中度</label><input type="radio" name="tricuspid_stenosis" id="blue" value="2">	
+			           				<label for="gary">重度</label><input type="radio" name="tricuspid_stenosis" id="gary" value="3">	
 								</fieldset>
 								<fieldset data-role="controlgroup">
 									<legend>三尖瓣关闭不全：</legend>
-									<label for="red">否</label><input type="radio" name="tricuspid_insufficiency" id="red" value="red">
-									<label for="green">轻度</label><input type="radio" name="tricuspid_insufficiency" id="green" value="green">
-			          				<label for="blue">中度</label><input type="radio" name="tricuspid_insufficiency" id="blue" value="blue">	
-			           				<label for="gary">重度</label><input type="radio" name="tricuspid_insufficiency" id="gary" value="gary">	
+									<label for="red">否</label><input type="radio" name="tricuspid_insufficiency" id="red" value="0">
+									<label for="green">轻度</label><input type="radio" name="tricuspid_insufficiency" id="green" value="1">
+			          				<label for="blue">中度</label><input type="radio" name="tricuspid_insufficiency" id="blue" value="2">	
+			           				<label for="gary">重度</label><input type="radio" name="tricuspid_insufficiency" id="gary" value="3">	
 								</fieldset>
 								<fieldset data-role="controlgroup">
 									<legend>肺动脉瓣狭窄：</legend>
-									<label for="red">否</label><input type="radio" name="pulmonary_stenosis" id="red" value="red">
-									<label for="green">轻度</label><input type="radio" name="pulmonary_stenosis" id="green" value="green">
-			          				<label for="blue">中度</label><input type="radio" name="pulmonary_stenosis" id="blue" value="blue">	
-			           				<label for="gary">重度</label><input type="radio" name="pulmonary_stenosis" id="gary" value="gary">	
+									<label for="red">否</label><input type="radio" name="pulmonary_stenosis" id="red" value="0">
+									<label for="green">轻度</label><input type="radio" name="pulmonary_stenosis" id="green" value="1">
+			          				<label for="blue">中度</label><input type="radio" name="pulmonary_stenosis" id="blue" value="2">	
+			           				<label for="gary">重度</label><input type="radio" name="pulmonary_stenosis" id="gary" value="3">	
 								</fieldset>
 								<fieldset data-role="controlgroup">
 									<legend>肺动脉瓣关闭不全：</legend>
-									<label for="red">否</label><input type="radio" name="pulmonary_insufficiency" id="red" value="red">
-									<label for="green">轻度</label><input type="radio" name="pulmonary_insufficiency" id="green" value="green">
-			          				<label for="blue">中度</label><input type="radio" name="pulmonary_insufficiency" id="blue" value="blue">	
-			           				<label for="gary">重度</label><input type="radio" name="pulmonary_insufficiency" id="gary" value="gary">	
+									<label for="red">否</label><input type="radio" name="pulmonary_insufficiency" id="red" value="0">
+									<label for="green">轻度</label><input type="radio" name="pulmonary_insufficiency" id="green" value="1">
+			          				<label for="blue">中度</label><input type="radio" name="pulmonary_insufficiency" id="blue" value="2">	
+			           				<label for="gary">重度</label><input type="radio" name="pulmonary_insufficiency" id="gary" value="3">	
 								</fieldset>
 								<label for="artificial_pipe/shunt">人工管道/分流：</label>
 								<select name="artificial_pipe/shunt" id="artificial_pipe/shunt" data-role="slider">
