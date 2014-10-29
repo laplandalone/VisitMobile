@@ -1,4 +1,4 @@
-var complicationsTypeArray;
+var complicationsType;
 $(document).ready(function() {
 	$("#submit").click(function(){
 		if(!checkParam())
@@ -62,14 +62,16 @@ function checkParam()
 		var count = 0
 		$("[name='complications_type']:checked").each(function(){
 			count++;
-			var obj = new Object();
-			obj.complications_type = $(this).val();
-			complicationsTypeArray.push(obj);
+			complicationsType += $(this).val() + ",";
 		});
 		if(count == 0)
 		{
 			showPopupMessage("请选择患者的并发症类型!");
 			return false;
+		}
+		else
+		{
+			complicationsType = complicationsType.substring(0, complicationsType.length - 1);
 		}
 	}
 	return true;

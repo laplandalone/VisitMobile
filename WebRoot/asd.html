@@ -93,11 +93,11 @@
 								<table>
 									<label for="blue">肺动脉收缩压：</label>
 									<tr>
-										<td><input type="text" name="pulmonary_artery_systolic_pressure" id="pulmonary_artery_systolic_pressure"></td>
+										<td><input type="text" name="pulmonary_systolic_pressure" id="pulmonary_systolic_pressure"></td>
 										<td><label for="blue">mmHg</label></td>
 									</tr>
 								</table>
-								<label for="blue">LVD/LVS</label><input type="text" name="fname" id="fname">
+								<label for="blue">LVD/LVS</label><input type="text" name="lvd_lvs" id="lvd_lvs">
 								<label for="residual_leakage">是否有残余漏：</label>
 								<select name="residual_leakage" id="residual_leakage" data-role="slider">
 									<option value="on">是</option>
@@ -106,8 +106,8 @@
 								<div data-role="fieldcontain">
 									<label for="blue">具体描述：</label><input type="text" name="residual_leakage_desc" id="residual_leakage_desc">
 								</div>
-								<label for="r/l_ventricular_outflow_tract_stenosis">右/左室流出道狭窄：</label>
-								<select name="r/l_ventricular_outflow_tract_stenosis" id="r/l_ventricular_outflow_tract_stenosis" data-role="slider">
+								<label for="r/l_ventricular_stenosis">右/左室流出道狭窄：</label>
+								<select name="r/l_ventricular_stenosis" id="r/l_ventricular_stenosis" data-role="slider">
 									<option value="on">是</option>
 			     				 	<option value="off">否</option>
 								</select>
@@ -115,7 +115,7 @@
 									<table>
 										<tr>
 											<td>
-												<select name="ROVT/LOVT" id="ROVT/LOVT" data-role="slider">
+												<select name="ROVT_LOVT" id="ROVT_LOVT" data-role="slider">
 													<option value="on">ROVT</option>
 			     				 					<option value="off">LOVT</option>
 												</select>
@@ -210,8 +210,8 @@
 									<option value="on">有</option>
 			     				 	<option value="off">无</option>
 								</select>
-								<label for="artery/atrioventricular_connection">大动脉/房室联接一致：</label>
-								<select name="artery/atrioventricular_connection" id="artery/atrioventricular_connection" data-role="slider">
+								<label for="artery/atrioventricular">大动脉/房室联接一致：</label>
+								<select name="artery/atrioventricular" id="artery/atrioventricular" data-role="slider">
 									<option value="on">是</option>
 			     				 	<option value="off">否</option>
 								</select>
