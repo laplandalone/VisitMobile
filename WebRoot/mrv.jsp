@@ -1,3 +1,10 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String userId= request.getParameter("userId");
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,6 +19,10 @@
    		<script type="text/javascript" src="pub/js/json2.js"></script>
    		<script type="text/javascript" src="js/mvr.js"></script>
 	</head>
+	<script>
+	var userId='<%=userId%>';
+	var visitType='mvr';
+	</script>
 	<body>
 		<div data-role="page">
 			<form id="callAjaxForm">

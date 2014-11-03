@@ -3,12 +3,10 @@ $(document).ready(function() {
 	$("#submit").click(function(){
 		if(!checkParam())
 		{
-			alert("1");
 			return;
 		}
 		else
 		{
-			alert("2");
 			var obj = $("select, input").serializeObject();
 //			obj.patient_recover = $("[name='patient_recover']:checked").val();
 //			obj.activity_level = $("[name='activity']:checked").val();
@@ -18,11 +16,10 @@ $(document).ready(function() {
 				obj.complications_type = complicationsTypes;
 			}
 			var param = JSON.stringify(obj);
-			alert("3");
 			$.ajax({
 				type:"POST",
 				url:"/visit/patientVisit.do?method=submitMvr",
-				data:"param="+param,
+				data:"param="+param+"&userId="+userId+"&visitType="+visitType,
 				dataType:"json",
 				success:function(data)
 				{

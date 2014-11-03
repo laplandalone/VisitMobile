@@ -3,7 +3,6 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 String userId= request.getParameter("userId");
- System.out.println(userId);
 %>
 <!DOCTYPE html>
 <html>
@@ -19,6 +18,10 @@ String userId= request.getParameter("userId");
    		<script type="text/javascript" src="pub/js/json2.js"></script>
    		<script type="text/javascript" src="js/mvr.js"></script>
 	</head>
+	<script>
+	var userId='<%=userId%>';
+	var visitType='asd';
+	</script>
 	<body>
 		<div data-role="page">
 			<form>

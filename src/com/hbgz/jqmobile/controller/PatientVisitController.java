@@ -22,15 +22,16 @@ public class PatientVisitController
 	private PatientVisitService patientVisitService;
 	
 	@RequestMapping(params = "method=submitMvr")
-	public void submitMvr(String param, HttpServletResponse response)
+	public void submitMvr(String param,String userId,String visitType, HttpServletResponse response)
 	{
 		log.error(param);
+		log.error(userId);
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = null;
 		try 
 		{
 			out = response.getWriter();
-			String retVal = patientVisitService.submitMvr(param);
+			String retVal = patientVisitService.submitMvr(param,userId,visitType);
 			log.error(retVal);
 			out.println(retVal);
 		} 
