@@ -24,9 +24,7 @@ import com.hbgz.jqmobile.util.StringUtil;
 
 public class ServiceEngine 
 {
-	private static String urlStr ="http://58.53.209.120:7001/autoQueueUp/mobile.htm?method=axis";//测试环境
-//	private static String urlStr ="http://www.tyhcl.com/mobile.htm?method=axis";//正式环境
-	
+	private static String urlStr ="http://58.53.209.107:10821/mobile.htm?method=axis";//测试环境
 
 	public static String invokeSer(String param) throws Exception
 	{

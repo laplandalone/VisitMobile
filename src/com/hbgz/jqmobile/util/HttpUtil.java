@@ -9,7 +9,7 @@ public class HttpUtil
 {
 //	private static final String url = "http://hiseemedical.com:10821/mobile.htm?method=axis";
 	
-	private static final String url = "http://localhost:7001/mobile.htm?method=axis";
+	private static final String url = "http://172.16.214.43:7002/mobile.htm?method=axis";
 	
 	public static String http(String param) throws Exception
 	{
@@ -17,6 +17,7 @@ public class HttpUtil
 		HttpURLConnection con = null;
 		try
 		{
+			System.out.println("1");
 			u = new URL(url);
 			con = (HttpURLConnection) u.openConnection();
 			con.setRequestMethod("POST");
@@ -30,9 +31,11 @@ public class HttpUtil
 			osw.close();
 		} catch (Exception e)
 		{
+			System.out.println("2");
 			e.printStackTrace();
 		} finally
 		{
+			System.out.println("3");
 			if (con != null)
 			{
 				con.disconnect();
@@ -43,6 +46,7 @@ public class HttpUtil
 		StringBuffer buffer = new StringBuffer();
 		try
 		{
+			System.out.println("4");
 			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
 			String temp;
 			while ((temp = br.readLine()) != null)
@@ -52,10 +56,12 @@ public class HttpUtil
 			}
 		} 
 		catch (Exception e)
-		{
+		{	System.out.println("5");
 			e.printStackTrace();
 		}
-		return buffer.toString();
+		String sss=buffer.toString();
+		System.out.println("buffer.toString():"+sss);
+		return sss;
 	}
 	
 	public static void main(String[] args) throws Exception 

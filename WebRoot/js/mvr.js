@@ -1,45 +1,6 @@
 var complicationsTypes = "";
-$(document).ready(function() {
-	$("#submit").click(function(){
-		if(!checkParam())
-		{
-			return;
-		}
-		else
-		{
-			var obj = $("select, input").serializeObject();
-//			obj.patient_recover = $("[name='patient_recover']:checked").val();
-//			obj.activity_level = $("[name='activity']:checked").val();
-			obj.is_complications = $("#is_complications").val();
-			if(obj.is_complications == "on")
-			{
-				obj.complications_type = complicationsTypes;
-			}
-			var param = JSON.stringify(obj);
-			$.ajax({
-				type:"POST",
-				url:"/visit/patientVisit.do?method=submitMvr",
-				data:"param="+param+"&userId="+userId+"&visitType="+visitType,
-				dataType:"json",
-				success:function(data)
-				{
-					if(data)
-					{
-						showPopupMessage("成功");
-					}
-					else
-					{
-						showPopupMessage("失败");
-					}
-				},
-				error:function(data)
-				{
-					showPopupMessage(data.statusText);
-				}
-			});
-		}
-	});
-});
+
+
 
 function checkParam()
 {
