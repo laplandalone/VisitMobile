@@ -44,10 +44,11 @@ public class HttpUtil
 
 		// ∂¡»°∑µªÿƒ⁄»›
 		StringBuffer buffer = new StringBuffer();
+		BufferedReader br = null;
 		try
 		{
 			System.out.println("4");
-			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			br = new BufferedReader(new InputStreamReader(con.getInputStream()));
 			String temp;
 			while ((temp = br.readLine()) != null)
 			{
@@ -58,6 +59,13 @@ public class HttpUtil
 		catch (Exception e)
 		{	System.out.println("5");
 			e.printStackTrace();
+		}
+		finally
+		{
+			if(br != null)
+			{
+				br.close();
+			}
 		}
 		String sss=buffer.toString();
 		System.out.println("buffer.toString():"+sss);
