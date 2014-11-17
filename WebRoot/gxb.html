@@ -20,42 +20,40 @@
     			<ul data-role="listview" data-inset="true">
     				<li data-role="fieldcontain">
     					<div data-role="fieldcontain">
-	    					<fieldset data-role="controlgroup">
-	    						<legend>有无以下症状：</legend>
-		    					<label for="palpitate_flag">心慌：</label>
-								<select name="palpitate_flag" id="palpitate_flag" data-role="slider">
-									<option value="on">有</option>
-			     				 	<option value="off">无</option>
-								</select>
-								<label for="chest_pain_flag">胸痛：</label>
-								<select name="chest_pain_flag" id="chest_pain_flag" data-role="slider">
-									<option value="on">有</option>
-			     				 	<option value="off">无</option>
-								</select>
-								<label for="chest_tightness_flag">胸闷：</label>
-								<select name="chest_tightness_flag" id="chest_tightness_flag" data-role="slider">
-									<option value="on">有</option>
-			     				 	<option value="off">无</option>
-								</select>
-								<label for="breathing_difficult_flag">呼吸困难：</label>
-								<select name="breathing_difficult_flag" id="breathing_difficult_flag" data-role="slider">
-									<option value="on">有</option>
-			     				 	<option value="off">无</option>
-								</select>
-								<label for="sweating_flag">发生上述症状时有无出汗：</label>
-								<select name="sweating_flag" id="sweating_flag" data-role="slider">
-									<option value="on">有</option>
-			     				 	<option value="off">无</option>
-								</select>
-								<div data-role="fieldcontain">
-									<fieldset data-role="controlgroup">
-										<legend>症状持续时间：</legend>
-										<label for="duration_symptoms0">1-5m</label><input type="radio" name="duration_symptoms" id="duration_symptoms0" value="0">
-				          				<label for="duration_symptoms1">5-10m</label><input type="radio" name="duration_symptoms" id="duration_symptoms1" value="1">
-				          				<label for="duration_symptoms2">15m</label><input type="radio" name="duration_symptoms" id="duration_symptoms2" value="2">	
-									</fieldset>
-								</div>
-	    					</fieldset>
+    						<label for="blue">有无以下症状：</label>
+							<label for="palpitate_flag">心慌：</label>
+							<select name="palpitate_flag" id="palpitate_flag" data-role="slider">
+								<option value="on">有</option>
+			     				 <option value="off">无</option>
+							</select>
+							<label for="chest_pain_flag">胸痛：</label>
+							<select name="chest_pain_flag" id="chest_pain_flag" data-role="slider">
+								<option value="on">有</option>
+			     				 <option value="off">无</option>
+							</select>
+							<label for="chest_tightness_flag">胸闷：</label>
+							<select name="chest_tightness_flag" id="chest_tightness_flag" data-role="slider">
+								<option value="on">有</option>
+			     				 <option value="off">无</option>
+							</select>
+							<label for="breathing_difficult_flag">呼吸困难：</label>
+							<select name="breathing_difficult_flag" id="breathing_difficult_flag" data-role="slider">
+								<option value="on">有</option>
+			     			 	<option value="off">无</option>
+							</select>
+							<label for="sweating_flag">发生上述症状时有无出汗：</label>
+							<select name="sweating_flag" id="sweating_flag" data-role="slider">
+								<option value="on">有</option>
+			     				<option value="off">无</option>
+							</select>
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup">
+									<legend>症状持续时间：</legend>
+									<label for="duration_symptoms0">1-5m</label><input type="radio" name="duration_symptoms" id="duration_symptoms0" value="0">
+				          			<label for="duration_symptoms1">5-10m</label><input type="radio" name="duration_symptoms" id="duration_symptoms1" value="1">
+				          			<label for="duration_symptoms2">15m</label><input type="radio" name="duration_symptoms" id="duration_symptoms2" value="2">	
+								</fieldset>
+							</div>
     					</div>
 					</li>
 					<li data-role="fieldcontain">
@@ -71,12 +69,12 @@
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
 								<legend>是否与下列因素相关：</legend>
-								<label for="related_factors_flag0">劳累</label><input type="radio" name="related_factors_flag" id="related_factors_flag0" value="0">
-		          				<label for="related_factors_flag1">情绪激动、紧张</label><input type="radio" name="related_factors_flag" id="related_factors_flag1" value="1">
-		          				<label for="related_factors_flag2">饱餐</label><input type="radio" name="related_factors_flag" id="related_factors_flag2" value="2">	
-								<label for="related_factors_flag3">天气变化</label><input type="radio" name="related_factors_flag" id="related_factors_flag3" value="3">	
-		           				<label for="related_factors_flag4">休息时</label><input type="radio" name="related_factors_flag" id="related_factors_flag4" value="4">	
-		           				<label for="related_factors_flag5">其他因素</label><input type="radio" name="related_factors_flag" id="related_factors_flag5" value="5">
+								<label for="related_factors_flag0">劳累</label><input type="checkbox" name="related_factors_flag" id="related_factors_flag0" value="0">
+		          				<label for="related_factors_flag1">情绪激动、紧张</label><input type="checkbox" name="related_factors_flag" id="related_factors_flag1" value="1">
+		          				<label for="related_factors_flag2">饱餐</label><input type="checkbox" name="related_factors_flag" id="related_factors_flag2" value="2">	
+								<label for="related_factors_flag3">天气变化</label><input type="checkbox" name="related_factors_flag" id="related_factors_flag3" value="3">	
+		           				<label for="related_factors_flag4">休息时</label><input type="checkbox" name="related_factors_flag" id="related_factors_flag4" value="4">	
+		           				<label for="related_factors_flag5">其他因素</label><input type="checkbox" name="related_factors_flag" id="related_factors_flag5" value="5">
 							</fieldset>
 						</div>
 					</li>
@@ -100,26 +98,32 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="hypertension_control_flag">高血压是否得到控制：</label>
-							<label for="hypertension_control_flag0">是</label><input type="radio" name="hypertension_control_flag" id="hypertension_control_flag0" value="0">
-		          			<label for="hypertension_control_flag1">否</label><input type="radio" name="hypertension_control_flag" id="hypertension_control_flag1" value="1">
-		          			<label for="hypertension_control_flag2">无</label><input type="radio" name="hypertension_control_flag" id="hypertension_control_flag2" value="2">
+							<fieldset data-role="controlgroup">
+								<legend>高血压是否得到控制：</legend>
+								<label for="hypertension_control_flag0">是</label><input type="radio" name="hypertension_control_flag" id="hypertension_control_flag0" value="0">
+			          			<label for="hypertension_control_flag1">否</label><input type="radio" name="hypertension_control_flag" id="hypertension_control_flag1" value="1">
+			          			<label for="hypertension_control_flag2">无</label><input type="radio" name="hypertension_control_flag" id="hypertension_control_flag2" value="2">
+							</fieldset>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="hyperlipidemia_control_flag">高血脂是否得到控制：</label>
-							<label for="hyperlipidemia_control_flag0">是</label><input type="radio" name="hyperlipidemia_control_flag" id="hyperlipidemia_control_flag0" value="0">
-		          			<label for="hyperlipidemia_control_flag1">否</label><input type="radio" name="hyperlipidemia_control_flag" id="hyperlipidemia_control_flag1" value="1">
-		          			<label for="hyperlipidemia_control_flag2">无</label><input type="radio" name="hyperlipidemia_control_flag" id="hyperlipidemia_control_flag2" value="2">
+							<fieldset data-role="controlgroup">
+								<legend>高血脂是否得到控制：</legend>
+								<label for="hyperlipidemia_control_flag0">是</label><input type="radio" name="hyperlipidemia_control_flag" id="hyperlipidemia_control_flag0" value="0">
+			          			<label for="hyperlipidemia_control_flag1">否</label><input type="radio" name="hyperlipidemia_control_flag" id="hyperlipidemia_control_flag1" value="1">
+			          			<label for="hyperlipidemia_control_flag2">无</label><input type="radio" name="hyperlipidemia_control_flag" id="hyperlipidemia_control_flag2" value="2">
+							</fieldset>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="diabetes_control_flag">糖尿病是否得到控制：</label>
-							<label for="diabetes_control_flag0">是</label><input type="radio" name="diabetes_control_flag" id="diabetes_control_flag0" value="0">
-		          			<label for="diabetes_control_flag1">否</label><input type="radio" name="diabetes_control_flag" id="diabetes_control_flag1" value="1">
-		          			<label for="diabetes_control_flag2">无</label><input type="radio" name="diabetes_control_flag" id="diabetes_control_flag2" value="2">
+							<fieldset data-role="controlgroup">
+								<legend>糖尿病是否得到控制：</legend>
+								<label for="diabetes_control_flag0">是</label><input type="radio" name="diabetes_control_flag" id="diabetes_control_flag0" value="0">
+			          			<label for="diabetes_control_flag1">否</label><input type="radio" name="diabetes_control_flag" id="diabetes_control_flag1" value="1">
+			          			<label for="diabetes_control_flag2">无</label><input type="radio" name="diabetes_control_flag" id="diabetes_control_flag2" value="2">
+							</fieldset>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
@@ -155,7 +159,7 @@
 						<div data-role="fieldcontain">
 							<table>
 								<tr>
-									<td><label for="heart_rate">心率</label></td>
+									<td><label for="heart_rate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;心率</label></td>
 									<td><input type="text" name="heart_rate" id="heart_rate"></td>
 									<td><label for="blue">次/分</label></td>
 								</tr>
