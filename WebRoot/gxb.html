@@ -22,37 +22,37 @@
     					<div data-role="fieldcontain">
 	    					<fieldset data-role="controlgroup">
 	    						<legend>有无以下症状：</legend>
-		    					<label for="ascites">心慌：</label>
-								<select name="ascites" id="ascites" data-role="slider">
+		    					<label for="palpitate_flag">心慌：</label>
+								<select name="palpitate_flag" id="palpitate_flag" data-role="slider">
 									<option value="on">有</option>
 			     				 	<option value="off">无</option>
 								</select>
-								<label for="ascites">胸痛：</label>
-								<select name="ascites" id="ascites" data-role="slider">
+								<label for="chest_pain_flag">胸痛：</label>
+								<select name="chest_pain_flag" id="chest_pain_flag" data-role="slider">
 									<option value="on">有</option>
 			     				 	<option value="off">无</option>
 								</select>
-								<label for="ascites">胸闷：</label>
-								<select name="ascites" id="ascites" data-role="slider">
+								<label for="chest_tightness_flag">胸闷：</label>
+								<select name="chest_tightness_flag" id="chest_tightness_flag" data-role="slider">
 									<option value="on">有</option>
 			     				 	<option value="off">无</option>
 								</select>
-								<label for="ascites">呼吸困难：</label>
-								<select name="ascites" id="ascites" data-role="slider">
+								<label for="breathing_difficult_flag">呼吸困难：</label>
+								<select name="breathing_difficult_flag" id="breathing_difficult_flag" data-role="slider">
 									<option value="on">有</option>
 			     				 	<option value="off">无</option>
 								</select>
-								<label for="ascites">发生上述症状时有无出汗：</label>
-								<select name="ascites" id="ascites" data-role="slider">
+								<label for="sweating_flag">发生上述症状时有无出汗：</label>
+								<select name="sweating_flag" id="sweating_flag" data-role="slider">
 									<option value="on">有</option>
 			     				 	<option value="off">无</option>
 								</select>
 								<div data-role="fieldcontain">
 									<fieldset data-role="controlgroup">
 										<legend>症状持续时间：</legend>
-										<label for="patient_recover0">1-5m</label><input type="radio" name="patient_recover" id="patient_recover0" value="0">
-				          				<label for="patient_recover1">5-10m</label><input type="radio" name="patient_recover" id="patient_recover1" value="1">
-				          				<label for="patient_recover2">15m</label><input type="radio" name="patient_recover" id="patient_recover2" value="2">	
+										<label for="duration_symptoms0">1-5m</label><input type="radio" name="duration_symptoms" id="duration_symptoms0" value="0">
+				          				<label for="duration_symptoms1">5-10m</label><input type="radio" name="duration_symptoms" id="duration_symptoms1" value="1">
+				          				<label for="duration_symptoms2">15m</label><input type="radio" name="duration_symptoms" id="duration_symptoms2" value="2">	
 									</fieldset>
 								</div>
 	    					</fieldset>
@@ -60,8 +60,8 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">发生症状时硝酸甘油或速效救心丸能否缓解：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="ease_flag">发生症状时硝酸甘油或速效救心丸能否缓解：</label>
+							<select name="ease_flag" id="ease_flag" data-role="slider">
 								<option value="on">能</option>
 			     				<option value="off">不能</option>
 							</select>
@@ -71,19 +71,19 @@
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
 								<legend>是否与下列因素相关：</legend>
-								<label for="patient_recover0">劳累</label><input type="radio" name="patient_recover" id="patient_recover0" value="0">
-		          				<label for="patient_recover1">情绪激动、紧张</label><input type="radio" name="patient_recover" id="patient_recover1" value="1">
-		          				<label for="patient_recover2">饱餐</label><input type="radio" name="patient_recover" id="patient_recover2" value="2">	
-								<label for="patient_recover3">天气变化</label><input type="radio" name="patient_recover" id="patient_recover3" value="3">	
-		           				<label for="patient_recover4">休息时</label><input type="radio" name="patient_recover" id="patient_recover4" value="4">	
-		           				<label for="patient_recover5">其他因素</label><input type="radio" name="patient_recover" id="patient_recover5" value="5">
+								<label for="related_factors_flag0">劳累</label><input type="radio" name="related_factors_flag" id="related_factors_flag0" value="0">
+		          				<label for="related_factors_flag1">情绪激动、紧张</label><input type="radio" name="related_factors_flag" id="related_factors_flag1" value="1">
+		          				<label for="related_factors_flag2">饱餐</label><input type="radio" name="related_factors_flag" id="related_factors_flag2" value="2">	
+								<label for="related_factors_flag3">天气变化</label><input type="radio" name="related_factors_flag" id="related_factors_flag3" value="3">	
+		           				<label for="related_factors_flag4">休息时</label><input type="radio" name="related_factors_flag" id="related_factors_flag4" value="4">	
+		           				<label for="related_factors_flag5">其他因素</label><input type="radio" name="related_factors_flag" id="related_factors_flag5" value="5">
 							</fieldset>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">是否能平卧：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="hypothesis_flag">是否能平卧：</label>
+							<select name="hypothesis_flag" id="hypothesis_flag" data-role="slider">
 								<option value="on">能</option>
 			     				<option value="off">不能</option>
 							</select>
@@ -91,8 +91,8 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">下肢是否水肿：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="edema_flag">下肢是否水肿：</label>
+							<select name="edema_flag" id="edema_flag" data-role="slider">
 								<option value="on">是</option>
 			     				<option value="off">否</option>
 							</select>
@@ -100,32 +100,32 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">高血压是否得到控制：</label>
-							<label for="red">是</label><input type="radio" name="oral_purple" id="red" value="0">
-		          			<label for="green">否</label><input type="radio" name="oral_purple" id="green" value="1">
-		          			<label for="blue">无</label><input type="radio" name="oral_purple" id="blue" value="2">
+							<label for="hypertension_control_flag">高血压是否得到控制：</label>
+							<label for="hypertension_control_flag0">是</label><input type="radio" name="hypertension_control_flag" id="hypertension_control_flag0" value="0">
+		          			<label for="hypertension_control_flag1">否</label><input type="radio" name="hypertension_control_flag" id="hypertension_control_flag1" value="1">
+		          			<label for="hypertension_control_flag2">无</label><input type="radio" name="hypertension_control_flag" id="hypertension_control_flag2" value="2">
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">高血脂是否得到控制：</label>
-							<label for="red">是</label><input type="radio" name="oral_purple" id="red" value="0">
-		          			<label for="green">否</label><input type="radio" name="oral_purple" id="green" value="1">
-		          			<label for="blue">无</label><input type="radio" name="oral_purple" id="blue" value="2">
+							<label for="hyperlipidemia_control_flag">高血脂是否得到控制：</label>
+							<label for="hyperlipidemia_control_flag0">是</label><input type="radio" name="hyperlipidemia_control_flag" id="hyperlipidemia_control_flag0" value="0">
+		          			<label for="hyperlipidemia_control_flag1">否</label><input type="radio" name="hyperlipidemia_control_flag" id="hyperlipidemia_control_flag1" value="1">
+		          			<label for="hyperlipidemia_control_flag2">无</label><input type="radio" name="hyperlipidemia_control_flag" id="hyperlipidemia_control_flag2" value="2">
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">糖尿病是否得到控制：</label>
-							<label for="red">是</label><input type="radio" name="oral_purple" id="red" value="0">
-		          			<label for="green">否</label><input type="radio" name="oral_purple" id="green" value="1">
-		          			<label for="blue">无</label><input type="radio" name="oral_purple" id="blue" value="2">
+							<label for="diabetes_control_flag">糖尿病是否得到控制：</label>
+							<label for="diabetes_control_flag0">是</label><input type="radio" name="diabetes_control_flag" id="diabetes_control_flag0" value="0">
+		          			<label for="diabetes_control_flag1">否</label><input type="radio" name="diabetes_control_flag" id="diabetes_control_flag1" value="1">
+		          			<label for="diabetes_control_flag2">无</label><input type="radio" name="diabetes_control_flag" id="diabetes_control_flag2" value="2">
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">是否低盐饮食：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="low_salt_flag">是否低盐饮食：</label>
+							<select name="low_salt_flag" id="low_salt_flag" data-role="slider">
 								<option value="on">是</option>
 			     				<option value="off">否</option>
 							</select>
@@ -133,8 +133,8 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">是否低脂饮食：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="low_fat_flag">是否低脂饮食：</label>
+							<select name="low_fat_flag" id="low_fat_flag" data-role="slider">
 								<option value="on">是</option>
 			     				<option value="off">否</option>
 							</select>
@@ -144,8 +144,8 @@
 						<div data-role="fieldcontain">
 							<table>
 								<tr>
-									<td><label for="blue">目前血压</label></td>
-									<td><input type="text" name="differential_pressure" id="differential_pressure"></td>
+									<td><label for="blood_pressure">目前血压</label></td>
+									<td><input type="text" name="blood_pressure" id="blood_pressure"></td>
 									<td><label for="blue">mmHg</label></td>
 								</tr>
 							</table>
@@ -155,8 +155,8 @@
 						<div data-role="fieldcontain">
 							<table>
 								<tr>
-									<td><label for="blue">心率</label></td>
-									<td><input type="text" name="differential_pressure" id="differential_pressure"></td>
+									<td><label for="heart_rate">心率</label></td>
+									<td><input type="text" name="heart_rate" id="heart_rate"></td>
 									<td><label for="blue">次/分</label></td>
 								</tr>
 							</table>
@@ -166,8 +166,8 @@
 						<div data-role="fieldcontain">
 							<table>
 								<tr>
-									<td><label for="blue">日吸烟量</label></td>
-									<td><input type="text" name="differential_pressure" id="differential_pressure"></td>
+									<td><label for="smoking_daily">日吸烟量</label></td>
+									<td><input type="text" name="smoking_daily" id="smoking_daily"></td>
 									<td><label for="blue">支</label></td>
 								</tr>
 							</table>
@@ -177,8 +177,8 @@
 						<div data-role="fieldcontain">
 							<table>
 								<tr>
-									<td><label for="blue">日饮酒量</label></td>
-									<td><input type="text" name="differential_pressure" id="differential_pressure"></td>
+									<td><label for="drinking_daily">日饮酒量</label></td>
+									<td><input type="text" name="drinking_daily" id="drinking_daily"></td>
 									<td><label for="blue">两</label></td>
 								</tr>
 							</table>
@@ -186,8 +186,8 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">有无运动、锻炼：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="exercise_flag">有无运动、锻炼：</label>
+							<select name="exercise_flag" id="exercise_flag" data-role="slider">
 								<option value="on">有</option>
 			     				<option value="off">无</option>
 							</select>
@@ -195,8 +195,8 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">是否按医嘱服药：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="medicine_flag">是否按医嘱服药：</label>
+							<select name="medicine_flag" id="medicine_flag" data-role="slider">
 								<option value="on">是</option>
 			     				<option value="off">否</option>
 							</select>
@@ -204,57 +204,57 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">术后是否去医院检查心电图：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="ecg_flag">术后是否去医院检查心电图：</label>
+							<select name="ecg_flag" id="ecg_flag" data-role="slider">
 								<option value="on">是</option>
 			     				<option value="off">否</option>
 							</select>
 							<div data-role="fieldcontain">
-								<label for="ascites">心电图结果是否正常：</label>
-								<select name="ascites" id="ascites" data-role="slider">
+								<label for="ecg_result_normal">心电图结果是否正常：</label>
+								<select name="ecg_result_normal" id="ecg_result_normal" data-role="slider">
 									<option value="on">是</option>
 				     				<option value="off">否</option>
 								</select>
 								<div data-role="fieldcontain">
-									<label for="blue">检查结果：</label><input type="text" name="question_desc" id="question_desc">
+									<label for="ecg_check_results">心电图检查结果：</label><input type="text" name="ecg_check_results" id="ecg_check_results">
 								</div>
 							</div>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">术后是否去医院做血液检查 ：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="blood_tests_flag">术后是否去医院做血液检查 ：</label>
+							<select name="blood_tests_flag" id="blood_tests_flag" data-role="slider">
 								<option value="on">是</option>
 			     				<option value="off">否</option>
 							</select>
 							<div data-role="fieldcontain">
-								<label for="ascites">血液检查异常指标数值是否正常 ：</label>
-								<select name="ascites" id="ascites" data-role="slider">
+								<label for="blood_tests_normal">血液检查异常指标数值是否正常 ：</label>
+								<select name="blood_tests_normal" id="blood_tests_normal" data-role="slider">
 									<option value="on">是</option>
 				     				<option value="off">否</option>
 								</select>
 								<div data-role="fieldcontain">
-									<label for="blue">检查结果：</label><input type="text" name="question_desc" id="question_desc">
+									<label for="blood_tests_results">血液检查结果：</label><input type="text" name="blood_tests_results" id="blood_tests_results">
 								</div>
 							</div>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="ascites">术后是否去医院做超声检查 ：</label>
-							<select name="ascites" id="ascites" data-role="slider">
+							<label for="ultrasound_flag">术后是否去医院做超声检查 ：</label>
+							<select name="ultrasound_flag" id="ultrasound_flag" data-role="slider">
 								<option value="on">是</option>
 			     				<option value="off">否</option>
 							</select>
 							<div data-role="fieldcontain">
-								<label for="ascites">超声结果是否正常 ：</label>
-								<select name="ascites" id="ascites" data-role="slider">
+								<label for="ultrasound_normal">超声结果是否正常 ：</label>
+								<select name="ultrasound_normal" id="ultrasound_normal" data-role="slider">
 									<option value="on">是</option>
 				     				<option value="off">否</option>
 								</select>
 								<div data-role="fieldcontain">
-									<label for="blue">检查结果：</label><input type="text" name="question_desc" id="question_desc">
+									<label for="ultrasound_results">超声检查结果：</label><input type="text" name="ultrasound_results" id="ultrasound_results">
 								</div>
 							</div>
 						</div>
@@ -263,9 +263,9 @@
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
 								<legend>对住院期间护理工作是否满意：</legend>
-								<label for="patient_recover0">满意</label><input type="radio" name="patient_recover" id="patient_recover0" value="0">
-		          				<label for="patient_recover1">基本满意</label><input type="radio" name="patient_recover" id="patient_recover1" value="1">
-		          				<label for="patient_recover2">不满意</label><input type="radio" name="patient_recover" id="patient_recover2" value="2">	
+								<label for="nursing_flag0">满意</label><input type="radio" name="nursing_flag" id="nursing_flag0" value="0">
+		          				<label for="nursing_flag1">基本满意</label><input type="radio" name="nursing_flag" id="nursing_flag1" value="1">
+		          				<label for="nursing_flag2">不满意</label><input type="radio" name="nursing_flag" id="nursing_flag2" value="2">	
 							</fieldset>
 						</div>
 					</li>
@@ -273,15 +273,15 @@
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
 								<legend>对住院期间医师工作是否满意：</legend>
-								<label for="patient_recover0">满意</label><input type="radio" name="patient_recover" id="patient_recover0" value="0">
-		          				<label for="patient_recover1">基本满意</label><input type="radio" name="patient_recover" id="patient_recover1" value="1">
-		          				<label for="patient_recover2">不满意</label><input type="radio" name="patient_recover" id="patient_recover2" value="2">	
+								<label for="physicians_flag0">满意</label><input type="radio" name="physicians_flag" id="physicians_flag0" value="0">
+		          				<label for="physicians_flag1">基本满意</label><input type="radio" name="physicians_flag" id="physicians_flag1" value="1">
+		          				<label for="physicians_flag2">不满意</label><input type="radio" name="physicians_flag" id="physicians_flag2" value="2">	
 							</fieldset>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="blue">八、您对我院服务有无意见和建议，请详细注明：</label>
+							<label for="blue">您对我院服务有无意见和建议，请详细注明：</label>
        						<textarea cols="40" rows="8" name="advice" id="advice"></textarea>
 						</div>
 					</li>
@@ -317,13 +317,6 @@ document.documentElement.style.webkitTouchCallout='none';
 function addgxb()
 {
 	var obj = $("select, input").serializeObject();
-//	obj.patient_recover = $("[name='patient_recover']:checked").val();
-//	obj.activity_level = $("[name='activity']:checked").val();
-	obj.is_complications = $("#is_complications").val();
-	if(obj.is_complications == "on")
-	{
-		obj.complications_type = complicationsTypes;
-	}
 	var param = JSON.stringify(obj);
 	window.javatojs.addVisit(param,'gxb');	
 }
