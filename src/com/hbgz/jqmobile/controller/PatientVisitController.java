@@ -1,6 +1,8 @@
 package com.hbgz.jqmobile.controller;
 
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -44,5 +46,9 @@ public class PatientVisitController
 		{
 			out.close();
 		}
+	}
+	
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		System.out.println(URLDecoder.decode("\u70ed+++\u3002","UTF-8"));
 	}
 }
