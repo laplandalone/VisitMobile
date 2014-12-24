@@ -6,11 +6,15 @@ import java.net.URLDecoder;
 
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.hbgz.jqmobile.service.PatientVisitService;
 
@@ -46,6 +50,26 @@ public class PatientVisitController
 		{
 			out.close();
 		}
+	}
+	
+	@RequestMapping(params = "method=qryVisitDetail")
+	public ModelAndView qryVisitDetail(String visitId, HttpServletResponse response)
+	{
+		ModelAndView view = new ModelAndView("visitDetail");
+		try 
+		{
+			JSONArray array = patientVisitService.qryVisitDetail(visitId);
+			log.error(array);
+			JSONObject obj = patientVisitService.qryPatientVisitById(visitId);
+			log.error(obj);
+			view.addObject("array", array);
+			view.addObject("obj", obj);
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return view;
 	}
 	
 	public static void main(String[] args) throws UnsupportedEncodingException {

@@ -5,11 +5,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import net.sf.json.JSONArray;
 public class HttpUtil 
 {
 //	private static final String url = "http://hiseemedical.com:10821/mobile.htm?method=axis";
 	
-	private static final String url = "http://172.16.214.43:7002/mobile.htm?method=axis";
+//	private static final String url = "http://172.16.214.43:7002/mobile.htm?method=axis";
+	
+	private static final String url = "http://localhost:7001/mobile.htm?method=axis";
 	
 	public static String http(String param) throws Exception
 	{
@@ -48,7 +52,7 @@ public class HttpUtil
 		try
 		{
 			System.out.println("4");
-			br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			String temp;
 			while ((temp = br.readLine()) != null)
 			{
@@ -74,7 +78,10 @@ public class HttpUtil
 	
 	public static void main(String[] args) throws Exception 
 	{
-		String param = "param={channel:\"Q\",channelType:\"PC\",serviceType:\"BUS20030\",securityCode:\"0000000000\",params:{pushUserId:\"1078586329118986050\",pushChannelId:\"\"},rtnDataFormatType:\"user-defined\"}";
-		System.err.println(HttpUtil.http(param));
+//		String param = "param={channel:\"Q\",channelType:\"PC\",serviceType:\"BUS20030\",securityCode:\"0000000000\",params:{pushUserId:\"1078586329118986050\",pushChannelId:\"\"},rtnDataFormatType:\"user-defined\"}";
+		String param = "param={channel:\"Q\",channelType:\"PC\",serviceType:\"BUS3002\",securityCode:\"0000000000\",params:{visitId:\"24025\"},rtnDataFormatType:\"user-defined\"}";
+		String retVal = HttpUtil.http(param);
+		JSONArray array = JSONArray.fromObject(retVal);
+		System.err.println(array);
 	}
 }
