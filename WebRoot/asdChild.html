@@ -204,8 +204,39 @@
 							</fieldset>
 						</div>
 					</li>
+					<li class="ui-body ui-body-b">
+		            	<fieldset class="ui-grid-a">
+		                    <div class="ui-block-a"><a href="#" data-role="button" data-rel="back" data-theme="c">返回</a></div>
+		                    <div class="ui-block-b"><a href="#" data-role="button" data-theme="b" onclick="addAsd()">提交</a></div>
+		            	</fieldset>
+		        	</li>
   				</ul>
   			</form>
+  			<style>
+				.ui-btn-down-c,.ui-btn-hover-c {
+					border: 1px solid 		#ccc /*{c-bup-border}*/;
+					background: 			#eee /*{c-bup-background-color}*/;
+					font-weight: bold;
+					color: 					#222 /*{c-bup-color}*/;
+					text-shadow: 0 /*{c-bup-shadow-x}*/ 1px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #fff /*{c-bup-shadow-color}*/;
+					background-image: -webkit-gradient(linear, left top, left bottom, from( #fff /*{c-bup-background-start}*/), to( #f1f1f1 /*{c-bup-background-end}*/)); /* Saf4+, Chrome */
+					background-image: -webkit-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+					background-image:    -moz-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* FF3.6 */
+					background-image:     -ms-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* IE10 */
+					background-image:      -o-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* Opera 11.10+ */
+					background-image:         linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+				}
+			</style>
   		</div>
   	</body>
 </html>
+<script type="text/javascript">
+document.documentElement.style.webkitUserSelect='none';
+document.documentElement.style.webkitTouchCallout='none';
+function addAsd()
+{
+	var obj = $("select, input").serializeObject();
+	var param = JSON.stringify(obj);
+	window.javatojs.addVisit(param,'asdChild');	
+}
+</script>
