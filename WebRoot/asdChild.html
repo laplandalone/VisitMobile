@@ -50,35 +50,45 @@
 		           				<label for="patient_recover4">差</label><input type="radio" name="patient_recover" id="patient_recover4" value="4">	
 		           				<label for="patient_recover5">有问题</label><input type="radio" name="patient_recover" id="patient_recover5" value="5">
 							</fieldset>
-							<div data-role="fieldcontain">
+							<div data-role="fieldcontain" style="display: none;" id="questionDescDiv">
 								<label for="blue">问题描述：</label><input type="text" name="question_desc" id="question_desc">
 							</div>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<fieldset data-role="controlgroup">
-								<legend>三、活动时是否出现乏力、憋气或呼吸困难：</legend>
-								<label for="red">无</label><input type="radio" name="activities_situation" id="red" value="0">
-								<label for="black">剧烈活动时</label><input type="radio" name="activities_situation" id="black" value="1">
-		          				<label for="green">中等量活动时</label><input type="radio" name="activities_situation" id="green" value="2">
-		          				<label for="blue">轻微活动如穿衣时</label><input type="radio" name="activities_situation" id="blue" value="3">	
-								<label for="gary">卧床休息时</label><input type="radio" name="activities_situation" id="gary" value="5">	
-							</fieldset>
+							<label for="ascites">三、活动时是否出现乏力、憋气或呼吸困难：</label>
+							<select name="activities" id="activities" data-role="slider">
+								<option value="on">是</option>
+	     				 		<option value="off" selected="selected">否</option>
+							</select>
+							<div data-role="fieldcontain" style="display: none;" id="activitiesSituationDiv">
+								<fieldset data-role="controlgroup">
+									<label for="black">剧烈活动时</label><input type="radio" name="activities_situation" id="black" value="1">
+			          				<label for="green">中等量活动时</label><input type="radio" name="activities_situation" id="green" value="2">
+			          				<label for="blue">轻微活动如穿衣时</label><input type="radio" name="activities_situation" id="blue" value="3">	
+									<label for="gary">卧床休息时</label><input type="radio" name="activities_situation" id="gary" value="5">	
+								</fieldset>
+							</div>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<fieldset data-role="controlgroup">
-								<legend>四、是否有口唇发紫的情况：</legend>
-								<label for="red">无</label><input type="radio" name="oral_purple" id="red" value="0">
-		          				<label for="green">有，同术前</label><input type="radio" name="oral_purple" id="green" value="1">
-		          				<label for="blue">有，较术前重</label><input type="radio" name="oral_purple" id="blue" value="2">	
-							</fieldset>
+							<label for="ascites">四、是否有口唇发紫的情况：</label>
+							<select name="oral" id="oral" data-role="slider">
+								<option value="on">有</option>
+	     				 		<option value="off" selected="selected">无</option>
+							</select>
+							<div data-role="fieldcontain" style="display: none;" id="oralPurpleDiv">
+								<fieldset data-role="controlgroup">
+			          				<label for="green">有，同术前</label><input type="radio" name="oral_purple" id="green" value="1">
+			          				<label for="blue">有，较术前重</label><input type="radio" name="oral_purple" id="blue" value="2">	
+								</fieldset>
+							</div>
 							<label for="ascites">有无腹水：</label>
 							<select name="ascites" id="ascites" data-role="slider">
 								<option value="on">有</option>
-	     				 		<option value="off">无</option>
+	     				 		<option value="off" selected="selected">无</option>
 							</select>
 						</div>
 					</li>
@@ -87,13 +97,15 @@
 							<label for="colour_ecg_check">五、近期是否进行彩超和心电图检查：</label>
 							<select name="colour_ecg_check" id="colour_ecg_check" data-role="slider">
 								<option value="on">是</option>
-	     				 		<option value="off">否</option>
+	     				 		<option value="off" selected="selected">否</option>
 							</select>
-							<fieldset class="ui-grid-a">
-								<div class="ui-block-b">
-									<a href="#" data-role="button" data-theme="b">上传检查结果</a>
-								</div>
-							</fieldset>
+							<div data-role="fieldcontain" style="display: none;" id="colourEcgCheckDiv">
+								<fieldset class="ui-grid-a">
+									<div class="ui-block-b">
+										<a href="#" data-role="button" data-theme="b">上传检查结果</a>
+									</div>
+								</fieldset>
+							</div>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
@@ -105,7 +117,7 @@
 									<td width="70%">
 										<select name="sample_rehmannia" id="sample_rehmannia" data-role="slider">
 											<option value="on">是</option>
-					     				 	<option value="off">否</option>
+					     				 	<option value="off" selected="selected">否</option>
 										</select>
 									</td>
 								</tr>
@@ -119,7 +131,7 @@
 									<td width="70%">
 										<select name="diuretics" id="diuretics" data-role="slider">
 											<option value="on">是</option>
-					     				 	<option value="off">否</option>
+					     				 	<option value="off" selected="selected">否</option>
 										</select>
 									</td>
 								</tr>
@@ -133,7 +145,7 @@
 									<td width="70%">
 										<select name="aspirin" id="aspirin" data-role="slider">
 											<option value="on">是</option>
-					     				 	<option value="off">否</option>
+					     				 	<option value="off" selected="selected">否</option>
 										</select>
 									</td>
 								</tr>
@@ -144,7 +156,7 @@
 									<td width="70%">
 										<select name="anticoagulants" id="anticoagulants" data-role="slider">
 											<option value="on">是</option>
-					     				 	<option value="off">否</option>
+					     				 	<option value="off" selected="selected">否</option>
 										</select>
 									</td>
 								</tr>
@@ -158,7 +170,7 @@
 									<td width="70%">
 										<select name="potassium_supplement_pills" id="potassium_supplement_pills" data-role="slider">
 											<option value="on">是</option>
-					     				 	<option value="off">否</option>
+					     				 	<option value="off" selected="selected">否</option>
 										</select>
 									</td>
 								</tr>
@@ -173,12 +185,12 @@
 							<label for="extremity_edema">七、双下肢是否有水肿：</label>
 							<select name="extremity_edema" id="extremity_edema" data-role="slider">
 								<option value="on">是</option>
-	     				 		<option value="off">否</option>
+	     				 		<option value="off" selected="selected">否</option>
 							</select>
 							<label for="eyelid_edema">眼睑是否有水肿：</label>
 							<select name="eyelid_edema" id="eyelid_edema" data-role="slider">
 								<option value="on">是</option>
-	     				 		<option value="off">否</option>
+	     				 		<option value="off" selected="selected">否</option>
 							</select>
 						</div>
 					</li>
@@ -194,7 +206,7 @@
 							<label for="interrupt_flag">是否容易中断：</label>
 							<select name="interrupt_flag" id="interrupt_flag" data-role="slider">
 								<option value="on">是</option>
-	     				 		<option value="off">否</option>
+	     				 		<option value="off" selected="selected">否</option>
 							</select>
 							<fieldset data-role="controlgroup">
 								<legend>儿童学习成绩如何：</legend>
@@ -231,11 +243,72 @@
   	</body>
 </html>
 <script type="text/javascript">
+$(document).ready(function(){
+	$("input[name='patient_recover']").click(function(){
+		if("5" == $(this).val())
+		{
+			$("#questionDescDiv").css("display", "block");
+		}
+		else
+		{
+			$("#questionDescDiv").css("display", "none");
+		}
+	});
+	
+	$("#colour_ecg_check").change(function(){
+		if("on" == $(this).val())
+		{
+			$("#colourEcgCheckDiv").css("display", "block");
+		}
+		else
+		{
+			$("#colourEcgCheckDiv").css("display", "none");
+		}
+	});
+	
+	$("#activities").change(function(){
+		if("on" == $(this).val())
+		{
+			$("#activitiesSituationDiv").css("display", "block");
+		}
+		else
+		{
+			$("#activitiesSituationDiv").css("display", "none");
+		}
+	});
+	
+	$("#oral").change(function(){
+		if("on" == $(this).val())
+		{
+			$("#oralPurpleDiv").css("display", "block");
+		}
+		else
+		{
+			$("#oralPurpleDiv").css("display", "none");
+		}
+	});
+});
 document.documentElement.style.webkitUserSelect='none';
 document.documentElement.style.webkitTouchCallout='none';
 function addAsd()
 {
 	var obj = $("select, input").serializeObject();
+	var activities_situation = "";
+	var activities = obj.activities;
+	if("off" == activities)
+	{
+		activities_situation = "0";
+	}
+	obj.activities = undefined;
+	obj.activities_situation = activities_situation;
+	var oral_purple = "";
+	var oral = obj.oral;
+	if("off" == oral)
+	{
+		oral_purple = "0";
+	}
+	obj.oral = undefined;
+	obj.oral_purple = oral_purple;
 	var param = JSON.stringify(obj);
 	window.javatojs.addVisit(param,'asdChild');	
 }
