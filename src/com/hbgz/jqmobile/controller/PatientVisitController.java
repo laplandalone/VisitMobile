@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hbgz.jqmobile.service.PatientVisitService;
+import com.hbgz.jqmobile.util.HisHttpUtil;
 
 @Controller
 @RequestMapping("/patientVisit.do")
@@ -53,23 +54,45 @@ public class PatientVisitController
 	}
 	
 	@RequestMapping(params = "method=qryVisitDetail")
-	public ModelAndView qryVisitDetail(String visitId, HttpServletResponse response)
+	public void qryVisitDetail(String visitId, HttpServletResponse response)
 	{
-		ModelAndView view = new ModelAndView("visitDetail");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = null;
 		try 
 		{
+			out = response.getWriter();
 			JSONArray array = patientVisitService.qryVisitDetail(visitId);
-			log.error(array);
-			JSONObject obj = patientVisitService.qryPatientVisitById(visitId);
-			log.error(obj);
-			view.addObject("array", array);
-			view.addObject("obj", obj);
+//			JSONObject obj = patientVisitService.qryPatientVisitById(visitId);
+//			log.error(obj);
+			JSONObject object = new JSONObject();
+			object.put("visits", array);
+			out.println(object);
 		} 
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
-		return view;
+	}
+	
+	@RequestMapping(params = "method=qryCheckResult")
+	public void qryCheckResult(String patientId, HttpServletResponse response)
+	{
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = null;
+		try 
+		{
+			out = response.getWriter();
+			String sql="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where patient_id='PID000251940' order by check_type";
+			String retVal = HisHttpUtil.http(sql);
+			JSONArray array = JSONArray.fromObject(retVal);
+			JSONObject object = new JSONObject();
+			object.put("results", array);
+			out.println(object);
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) throws UnsupportedEncodingException {
