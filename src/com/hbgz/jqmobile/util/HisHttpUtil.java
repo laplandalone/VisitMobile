@@ -72,7 +72,8 @@ public class HisHttpUtil
 		String sql1="select  top 10 * from mzbrxx";
 		String sql2="select  top 30 * from view_lis_result_app";
 		String sql3="select  * from mzbrxx where patient_id='PID000000014' and identity_id='420102400905311   '";
-		String retVal = HisHttpUtil.http(sql3);
+		String sql4="select  * from mzbrxx where patient_id='PID000000014'";
+		String retVal = HisHttpUtil.http(sql4);
 		System.err.println(retVal);
 	}
 }

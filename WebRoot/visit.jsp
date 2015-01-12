@@ -4,20 +4,30 @@
 	String path = request.getContextPath();
 	String visitId = request.getParameter("visitId");
 	String copyFlag = request.getParameter("copyFlag");
+	String patientId = request.getParameter("patientId");
+	String name = request.getParameter("name");
+	String operType = request.getParameter("operType");
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="black" /><meta name="format-detection" content="telephone=yes" /><meta name="format-detection" content="email=no" /><title>
 	 
-</title><link rel="stylesheet" type="text/css" href="../css/css.css" /><meta content="手机找工作,台州人力网手机版,触屏版,求职,找工作,招聘" name="keywords" />
+</title><link rel="stylesheet" type="text/css" href="/visit/css/css.css" /> 
 
-    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="/visit/js/jquery.js"></script>
 
 </head>
 <body>
     <div class="tzrl_box">
-     
+     <div data-role="fieldcontain">
+							<fieldset data-role="controlgroup">
+								<legend>患者姓名：<%=name %></legend>
+								<legend>病案号：<%=patientId %></legend>
+								<legend>手术类型：<%=operType %></legend>
+							</fieldset>
+							
+						</div>
         <div class="mq_box">
            
             <div class="mq_con_list">
@@ -61,7 +71,7 @@
    		    {
    				content+="<li><dl class='mq_word'>";
    				i=i+1;
-   	   			content+="<dd>"+i+"、"+obj.codeFlagVal+"</dd><dd>"+obj.codeValFlag+"</dd>";
+   	   			content+=i+"、"+obj.codeFlagVal+"<dd>"+obj.codeValFlag+"</dd>";
    	   			content+="</dl></li>";
    			});
    			
