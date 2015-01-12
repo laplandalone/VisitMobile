@@ -11,11 +11,9 @@
   	<head>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet"  href="jqm/css/themes/default/jquery.mobile-1.3.2.min.css">
-
-<script src="jqm/js/jquery.js"></script>
-<script src="jqm/js/jquery.mobile-1.3.2.min.js"></script>
+		<link rel="stylesheet"  href="jqm/css/themes/default/jquery.mobile-1.3.2.min.css">
+		<script src="jqm/js/jquery.js"></script>
+		<script src="jqm/js/jquery.mobile-1.3.2.min.js"></script>
  		<script type="text/javascript" src="pub/js/util.js"></script>
  		<script type="text/javascript" src="pub/js/json.js"></script>
  		<script type="text/javascript" src="pub/js/json2.js"></script>
@@ -24,30 +22,33 @@
   	<body>
   		<div data-role="page">
   			<form action="">
-  			<li data-role="fieldcontain">
+  				<ul data-role="listview" data-inset="true">
+	  				<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<fieldset data-role="controlgroup">
-								<legend>患者姓名：<%=name %></legend>
-								<legend>病案号：<%=patientId %></legend>
-								<legend>手术类型：<%=operType %></legend>
-							</fieldset>
-							
+							<table width="100%">
+								<tr>
+									<td width="50%"><label for="red">患者姓名：<%=name %></label></td>
+									<td width="50%"><label for="red">病案号：<%=patientId %></label></td>
+								</tr>
+								<tr>
+									<td colspan="2"><label for="red">手术类型：<%=operType %></label></td>
+								</tr>
+							</table>
 						</div>
 					</li>
-  				<ul data-role="listview" data-inset="true">
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
 							<label for="blue">一、现阶段身体状况：</label>
 							<table>
 								<tr>
-									<td><label for="weight">体重：</label></td>
-									<td><input type="text" name="weight" id="weight"></td>
-									<td><label for="weight">kg</label></td>
+									<td><label for="red">体重：</label></td>
+									<td><input type="text" name="weight" id="weight" onblur="isNumber(this)"></td>
+									<td><label for="red">kg</label></td>
 								</tr>
 								<tr>
-									<td><label for="height">身高：</label></td>
-									<td><input type="text" name="height" id="height"></td>
-									<td><label for="height">cm</label></td>
+									<td><label for="red">身高：</label></td>
+									<td><input type="text" name="height" id="height" onblur="isNumber(this)"></td>
+									<td><label for="red">cm</label></td>
 								</tr>
 							</table>
 							<fieldset data-role="controlgroup">
@@ -213,11 +214,11 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="daily_milk">八、儿童每日奶量：</label>
+							<label for="red">八、儿童每日奶量：</label>
 							<table>
 								<tr>
-									<td><input type="text" name="daily_milk" id="daily_milk"></td>
-									<td><label for="daily_milk">毫升</label></td>
+									<td><input type="text" name="daily_milk" id="daily_milk" onblur="isNumber(this)"></td>
+									<td><label for="red">毫升</label></td>
 								</tr>
 							</table>
 							<label for="interrupt_flag">是否容易中断：</label>
@@ -318,24 +319,101 @@ function cancel()
 }
 function addAsd()
 {
-	var obj = $("select, input").serializeObject();
-	var activities_situation = "";
-	var activities = obj.activities;
-	if("off" == activities)
+	if(!checkParam())
 	{
-		activities_situation = "0";
+		return;
 	}
-	obj.activities = undefined;
-	obj.activities_situation = activities_situation;
-	var oral_purple = "";
-	var oral = obj.oral;
-	if("off" == oral)
+	else
 	{
-		oral_purple = "0";
+		var obj = $("select, input").serializeObject();
+		var activities_situation = "";
+		var activities = obj.activities;
+		if("off" == activities)
+		{
+			activities_situation = "0";
+		}
+		obj.activities = undefined;
+		obj.activities_situation = activities_situation;
+		var oral_purple = "";
+		var oral = obj.oral;
+		if("off" == oral)
+		{
+			oral_purple = "0";
+		}
+		obj.oral = undefined;
+		obj.oral_purple = oral_purple;
+		var param = JSON.stringify(obj);
+		window.javatojs.addVisit(param,'asdChild');	
 	}
-	obj.oral = undefined;
-	obj.oral_purple = oral_purple;
-	var param = JSON.stringify(obj);
-	window.javatojs.addVisit(param,'asdChild');	
+}
+
+function checkParam()
+{
+	var weight = $("#weight").val();
+	if(weight == "" || weight == null || weight == "null" || weight == undefined)
+	{
+		alert("请输入患者的体重！");
+		return false;
+	}
+	var height = $("#height").val();
+	if(height == "" || height == null || height == "null" || height == undefined)
+	{
+		alert("请输入患者的身高！");
+		return false;
+	}
+	var mental_state = $("input[name='mental_state']:checked").val();  
+	if(mental_state == "" || mental_state == null || mental_state == "null" || mental_state == undefined)
+	{
+		alert("请选择患者的精神状态！");
+		return false;
+	}
+	var patient_recover = $("input[name='patient_recover']:checked").val();  
+	if(patient_recover == "" || patient_recover == null || patient_recover == "null" || patient_recover == undefined)
+	{
+		alert("请选择患者目前的恢复情况！");
+		return false;
+	}
+	else
+	{
+		var question_desc = $("#question_desc").val();
+		if("5" == patient_recover && (question_desc == "" || question_desc == null || question_desc == "null" || question_desc == undefined))
+		{
+			alert("请描述患者的恢复过程中出现问题的具体情况！");
+			return false;
+		}
+	}
+	var activities = $("#activities").val();
+	var activities_situation = $("input[name='activities_situation']:checked").val();  
+	if("on" == activities && (activities_situation == "" || activities_situation == null || activities_situation == "null" || activities_situation == undefined))
+	{
+		alert("请选择患者出现乏力、憋气或呼吸困难的场景！");
+		return false;
+	}
+	var oral = $("#oral").val();
+	var oral_purple = $("input[name='oral_purple']:checked").val();  
+	if("on" == oral && (oral_purple == "" || oral_purple == null || oral_purple == "null" || oral_purple == undefined))
+	{
+		alert("请选择患者出现口唇发紫的具体情况！");
+		return false;
+	}
+	var daily_milk = $("#daily_milk").val();
+	if(daily_milk == "" || daily_milk == null || daily_milk == "null" || daily_milk == undefined)
+	{
+		alert("请输入儿童每日的牛奶摄入量！");
+		return false;
+	}
+	var interrupt_flag = $("#interrupt_flag").val();
+	if(interrupt_flag == "" || interrupt_flag == null || interrupt_flag == "null" || interrupt_flag == undefined)
+	{
+		alert("请选择儿童的牛奶是否容易中断！");
+		return false;
+	}
+	var study_result = $("input[name='study_result']:checked").val();
+	if(study_result == "" || study_result == null || study_result == "null" || study_result == undefined)
+	{
+		alert("请选择儿童的学习成绩情况！");
+		return false;
+	}
+	return true;
 }
 </script>

@@ -11,9 +11,9 @@
   	<head>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"  href="jqm/css/themes/default/jquery.mobile-1.3.2.min.css">
-<script src="jqm/js/jquery.js"></script>
-<script src="jqm/js/jquery.mobile-1.3.2.min.js"></script>
+		<link rel="stylesheet"  href="jqm/css/themes/default/jquery.mobile-1.3.2.min.css">
+		<script src="jqm/js/jquery.js"></script>
+		<script src="jqm/js/jquery.mobile-1.3.2.min.js"></script>
  		<script type="text/javascript" src="pub/js/util.js"></script>
  		<script type="text/javascript" src="pub/js/json.js"></script>
  		<script type="text/javascript" src="pub/js/json2.js"></script>
@@ -22,30 +22,33 @@
   	<body>
   		<div data-role="page">
   			<form action="">
-  				<li data-role="fieldcontain">
+  				<ul data-role="listview" data-inset="true">
+	  				<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<fieldset data-role="controlgroup">
-								<legend>患者姓名：<%=name %></legend>
-								<legend>病案号：<%=patientId %></legend>
-								<legend>手术类型：<%=operType %></legend>
-							</fieldset>
-							
+							<table width="100%">
+								<tr>
+									<td width="50%"><label for="red">患者姓名：<%=name %></label></td>
+									<td width="50%"><label for="red">病案号：<%=patientId %></label></td>
+								</tr>
+								<tr>
+									<td colspan="2"><label for="red">手术类型：<%=operType %></label></td>
+								</tr>
+							</table>
 						</div>
 					</li>
-  				<ul data-role="listview" data-inset="true">
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
 							<label for="blue">一、现阶段身体状况：</label>
 							<table>
 								<tr>
-									<td><label for="weight">体重：</label></td>
-									<td><input type="text" name="weight" id="weight"></td>
-									<td><label for="weight">kg</label></td>
+									<td><label for="red">体重：</label></td>
+									<td><input type="text" name="weight" id="weight" onblur="isNumber(this)"></td>
+									<td><label for="red">kg</label></td>
 								</tr>
 								<tr>
-									<td><label for="height">身高：</label></td>
-									<td><input type="text" name="height" id="height"></td>
-									<td><label for="height">cm</label></td>
+									<td><label for="red">身高：</label></td>
+									<td><input type="text" name="height" id="height" onblur="isNumber(this)"></td>
+									<td><label for="red">cm</label></td>
 								</tr>
 							</table>
 							<fieldset data-role="controlgroup">
@@ -325,6 +328,53 @@ function addAsd()
 
 function checkParam()
 {
+	var weight = $("#weight").val();
+	if(weight == "" || weight == null || weight == "null" || weight == undefined)
+	{
+		alert("请输入患者的体重！");
+		return false;
+	}
+	var height = $("#height").val();
+	if(height == "" || height == null || height == "null" || height == undefined)
+	{
+		alert("请输入患者的身高！");
+		return false;
+	}
+	var appetite = $("input[name='appetite']:checked").val();  
+	if(appetite == "" || appetite == null || appetite == "null" || appetite == undefined)
+	{
+		alert("请选择患者的食欲情况！");
+		return false;
+	}
+	var patient_recover = $("input[name='patient_recover']:checked").val();  
+	if(patient_recover == "" || patient_recover == null || patient_recover == "null" || patient_recover == undefined)
+	{
+		alert("请选择患者目前的恢复情况！");
+		return false;
+	}
+	else
+	{
+		var question_desc = $("#question_desc").val();
+		if("5" == patient_recover && (question_desc == "" || question_desc == null || question_desc == "null" || question_desc == undefined))
+		{
+			alert("请描述患者的恢复过程中出现问题的具体情况！");
+			return false;
+		}
+	}
+	var activities = $("#activities").val();
+	var activities_situation = $("input[name='activities_situation']:checked").val();  
+	if("on" == activities && (activities_situation == "" || activities_situation == null || activities_situation == "null" || activities_situation == undefined))
+	{
+		alert("请选择患者出现乏力、憋气或呼吸困难的场景！");
+		return false;
+	}
+	var oral = $("#oral").val();
+	var oral_purple = $("input[name='oral_purple']:checked").val();  
+	if("on" == oral && (oral_purple == "" || oral_purple == null || oral_purple == "null" || oral_purple == undefined))
+	{
+		alert("请选择患者出现口唇发紫的具体情况！");
+		return false;
+	}
 	return true;
 }
 </script>
