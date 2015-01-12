@@ -3,6 +3,7 @@
 <%
 	String path = request.getContextPath();
 	String patientId = request.getParameter("patientId");
+	String checkTime = request.getParameter("checkTime");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -38,7 +39,7 @@ function qryPatientVisit()
 	var dig = null;
 	$.ajax({
 		type : "POST",
-		url : "/visit/patientVisit.do?method=qryCheckResult&patientId=<%=patientId%>",
+		url : "/visit/patientVisit.do?method=qryCheckResult&patientId=<%=patientId%>&checkTime=<%=checkTime%>",
 		data : obj,
 		contentType : "application/json;charset=UTF-8",
 		dataType : "json",
