@@ -295,24 +295,36 @@ function cancel()
 }
 function addAsd()
 {
-	var obj = $("select, input").serializeObject();
-	var activities_situation = "";
-	var activities = obj.activities;
-	if("off" == activities)
+	if(!checkParam())
 	{
-		activities_situation = "0";
+		return;
 	}
-	obj.activities = undefined;
-	obj.activities_situation = activities_situation;
-	var oral_purple = "";
-	var oral = obj.oral;
-	if("off" == oral)
+	else
 	{
-		oral_purple = "0";
+		var obj = $("select, input").serializeObject();
+		var activities_situation = "";
+		var activities = obj.activities;
+		if("off" == activities)
+		{
+			activities_situation = "0";
+		}
+		obj.activities = undefined;
+		obj.activities_situation = activities_situation;
+		var oral_purple = "";
+		var oral = obj.oral;
+		if("off" == oral)
+		{
+			oral_purple = "0";
+		}
+		obj.oral = undefined;
+		obj.oral_purple = oral_purple;
+		var param = JSON.stringify(obj);
+		window.javatojs.addVisit(param,'asdAdult');	
 	}
-	obj.oral = undefined;
-	obj.oral_purple = oral_purple;
-	var param = JSON.stringify(obj);
-	window.javatojs.addVisit(param,'asdAdult');	
+}
+
+function checkParam()
+{
+	return true;
 }
 </script>
