@@ -73,14 +73,14 @@ public class PatientVisitController
 	}
 	
 	@RequestMapping(params = "method=qryCheckResult")
-	public void qryCheckResult(String patientId,String checkTime, HttpServletResponse response)
+	public void qryCheckResult(String patientId,String checkTime,String checkTypeId, HttpServletResponse response)
 	{
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = null;
 		try 
 		{
 			out = response.getWriter();
-			String sql="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where patient_id='"+patientId+"' and convert(varchar(10),check_time,110)='"+checkTime+"' order by check_type";
+			String sql="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where check_type_id="+checkTypeId+" and  patient_id='"+patientId+"' and convert(varchar(10),check_time,110)='"+checkTime+"'";
 			String retVal = HisHttpUtil.http(sql);
 			JSONArray array = JSONArray.fromObject(retVal);
 			JSONObject object = new JSONObject();

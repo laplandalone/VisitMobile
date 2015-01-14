@@ -4,6 +4,8 @@
 	String path = request.getContextPath();
 	String patientId = request.getParameter("patientId");
 	String checkTime = request.getParameter("checkTime");
+	String checkTypeId = request.getParameter("checkTypeId");
+	String checkType= request.getParameter("checkType");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,7 +25,13 @@
 </head>
 <body>
     <div class="mtzrl_box">
+    
+    <div class='title' ><li><%=checkType %></li></div>
+	<div class='mq_box'> 
+	<div class='mq_con_list'>
       <div id="template"/>
+    </div>
+    </div>
     </div>
     <div class="overlay">&nbsp;</div>
 <div class="showbox" id="AjaxLoading">
@@ -39,7 +47,7 @@ function qryPatientVisit()
 	var dig = null;
 	$.ajax({
 		type : "POST",
-		url : "/visit/patientVisit.do?method=qryCheckResult&patientId=<%=patientId%>&checkTime=<%=checkTime%>",
+		url : "/visit/patientVisit.do?method=qryCheckResult&patientId=<%=patientId%>&checkTime=<%=checkTime%>&checkTypeId=<%=checkTypeId%>",
 		data : obj,
 		contentType : "application/json;charset=UTF-8",
 		dataType : "json",
@@ -62,20 +70,7 @@ function qryPatientVisit()
 			var checkType="";
 			$.each(data.results, function(i, obj)
 		    {
-				if(checkType=='' && checkType!=obj.check_type)
-				{
-					content+="<div class='title' ><li>"+obj.check_type+"</li></div>";
-					content+="<div class='mq_box'>";
-					content+="<div class='mq_con_list'>";
-					checkType=obj.check_type;
-				}else if(checkType!='' && checkType!=obj.check_type)
-				{
-					content+="</div></div>";
-					content+="<div class='title'><li>"+obj.check_type+"</li></div>";
-					content+="<div class='mq_box'>";
-					content+="<div class='mq_con_list'>";
-					checkType=obj.check_type;
-				}
+				
 				content+="<li><dl class='mq_word'>";
 				i=i+1;
 	   			content+="<dd>检查项目:"+obj.check_name+"</dd><dd>检查结果:"+obj.check_result+"</dd><dd>参考范围:"+obj.check_scope+"</dd><dd>计量单位:"+obj.check_unit+"</dd>";
