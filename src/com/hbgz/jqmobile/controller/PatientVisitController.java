@@ -64,7 +64,15 @@ public class PatientVisitController
 			JSONArray array = patientVisitService.qryVisitDetail(visitId);
 			JSONObject object = new JSONObject();
 			object.put("visits", array);
-			out.println(object);
+			
+			 JSONArray arrays = patientVisitService.getUserWakeById(visitId);
+			 if(arrays!=null && arrays.size()>0)
+			 {
+			 JSONObject obj = arrays.getJSONObject(0);
+			 String content = obj.getString("wakeContent");
+			 object.put("wakeContent", content);
+			 }
+			 out.println(object);
 		} 
 		catch (Exception e) 
 		{
@@ -80,7 +88,7 @@ public class PatientVisitController
 		try 
 		{
 			out = response.getWriter();
-			String sql="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where check_type_id="+checkTypeId+" and  patient_id='"+patientId+"' and convert(varchar(10),check_time,110)='"+checkTime+"'";
+			String sql="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,102) check_time from view_lis_result_app where check_type_id="+checkTypeId+" and  patient_id='"+patientId+"' and convert(varchar(10),check_time,102)='"+checkTime+"'";
 			String retVal = HisHttpUtil.http(sql);
 			JSONArray array = JSONArray.fromObject(retVal);
 			JSONObject object = new JSONObject();

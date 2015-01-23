@@ -17,6 +17,14 @@
  		<script type="text/javascript" src="pub/js/util.js"></script>
  		<script type="text/javascript" src="pub/js/json.js"></script>
  		<script type="text/javascript" src="pub/js/json2.js"></script>
+ 		<link rel="stylesheet" type="text/css" href="/visit/css/css.css" />
+		<style type="text/css">
+		.overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:998;width:100%;height:100%;_padding:0 20px 0 0;display:none;}
+		.showbox{position:fixed;top:0;left:50%;z-index:9999;opacity:0;filter:alpha(opacity=0);margin-left:-80px;}
+		*html .showbox,*html .overlay{position:absolute;top:expression(eval(document.documentElement.scrollTop));}
+		#AjaxLoading div.loadingWord{width:180px;height:50px;line-height:50px;}
+		</style>
+
   	</head>
   
   	<body>
@@ -27,7 +35,7 @@
 						<div data-role="fieldcontain">
 							<table width="100%">
 								<tr>
-									<td width="50%"><label for="red">患者姓名：<%=name %></label></td>
+									<td width="50%"><label for="red">姓名：<%=name %></label></td>
 									<td width="50%"><label for="red">病案号：<%=patientId %></label></td>
 								</tr>
 								<tr>
@@ -112,23 +120,7 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="colour_ecg_check">五、近期是否进行彩超和心电图检查：</label>
-							<select name="colour_ecg_check" id="colour_ecg_check" data-role="slider">
-								<option value="on">是</option>
-	     				 		<option value="off" selected="selected">否</option>
-							</select>
-							<div data-role="fieldcontain" style="display: none;" id="colourEcgCheckDiv">
-								<fieldset class="ui-grid-a">
-									<div class="ui-block-b">
-										<a href="#" data-role="button" data-theme="b">上传检查结果</a>
-									</div>
-								</fieldset>
-							</div>
-						</div>
-					</li>
-					<li data-role="fieldcontain">
-						<div data-role="fieldcontain">
-							<legend>六、是否使用下列药物：</legend>
+							<legend>五、是否使用下列药物：</legend>
 							<table style="width: 100%">
 								<tr>
 									<td width="30%"><label for="sample_rehmannia">样地黄类：</label></td>
@@ -200,7 +192,7 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="extremity_edema">七、双下肢是否有水肿：</label>
+							<label for="extremity_edema">六、双下肢是否有水肿：</label>
 							<select name="extremity_edema" id="extremity_edema" data-role="slider">
 								<option value="on">是</option>
 	     				 		<option value="off" selected="selected">否</option>
@@ -214,7 +206,7 @@
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="red">八、儿童每日奶量：</label>
+							<label for="red">七、儿童每日奶量：</label>
 							<table>
 								<tr>
 									<td><input type="text" name="daily_milk" id="daily_milk" onblur="isNumber(this)"></td>
@@ -228,18 +220,16 @@
 							</select>
 							<fieldset data-role="controlgroup">
 								<legend>儿童学习成绩如何：</legend>
-								<label for="red">好</label><input onclick='controlfocus(id)' type="radio" name="study_result" id="red" value="0">
-								<label for="black">一般</label><input onclick='controlfocus(id)' type="radio" name="study_result" id="black" value="1">
-		          				<label for="green">差</label><input onclick='controlfocus(id)' type="radio" name="study_result" id="green" value="2">
+								<label for="red">好</label><input onclick='controlfocus(id)'     type="radio" name="study_result" id="red" value="0">
+								<label for="black">一般</label><input onclick='controlfocus(id)'   type="radio" name="study_result" id="black" value="1">
+		          				<label for="green">差</label><input onclick='controlfocus(id)'   type="radio" name="study_result" id="green" value="2">
 							</fieldset>
 						</div>
 					</li>
-					<li class="ui-body ui-body-b">
-		            	<fieldset class="ui-grid-a">
-		                    <div class="ui-block-a"><a href="#" data-role="button" data-rel="back"  onclick="cancel()" data-theme="c">返回</a></div>
-		                    <div class="ui-block-b"><a href="#" data-role="button" data-theme="b" onclick="addAsd()">提交</a></div>
-		            	</fieldset>
-		        	</li>
+					<li data-role="fieldcontain">
+							<label for="colour_ecg_check">八、上传彩超和心电图检查图：</label>
+					</li>
+					
   				</ul>
   			</form>
   			<style>
@@ -258,6 +248,10 @@
 				}
 			</style>
   		</div>
+  		 <div class="overlay">&nbsp;</div>
+<div class="showbox" id="AjaxLoading">
+<div class="loadingWord" style="overflow:hidden;zoom:1"  align="center"><img src="/visit//images/loadingx.gif" alt="" style="padding-top:6px;"/></div>
+</div>
   	</body>
 </html>
 <script type="text/javascript">
@@ -319,6 +313,7 @@ function cancel()
 }
 function addAsd()
 {
+	
 	if(!checkParam())
 	{
 		return;
@@ -343,7 +338,8 @@ function addAsd()
 		obj.oral = undefined;
 		obj.oral_purple = oral_purple;
 		var param = JSON.stringify(obj);
-		window.javatojs.addVisit(param,'asdChild');	
+		 $(".overlay").css({ 'display': 'block', 'opacity': '0.8' }); $(".showbox").stop(true).animate({ 'margin-top': '300px', 'opacity': '1' }, 0);
+		 window.javatojs.addVisit(param,'asdChild');	
 	}
 }
 
@@ -352,25 +348,25 @@ function checkParam()
 	var weight = $("#weight").val();
 	if(weight == "" || weight == null || weight == "null" || weight == undefined)
 	{
-		alert("请输入患者的体重！");
+		window.javatojs.alert("请输入患者的体重！");
 		return false;
 	}
 	var height = $("#height").val();
 	if(height == "" || height == null || height == "null" || height == undefined)
 	{
-		alert("请输入患者的身高！");
+		window.javatojs.alert("请输入患者的身高！");
 		return false;
 	}
 	var mental_state = $("input[name='mental_state']:checked").val();  
 	if(mental_state == "" || mental_state == null || mental_state == "null" || mental_state == undefined)
 	{
-		alert("请选择患者的精神状态！");
+		window.javatojs.alert("请选择患者的精神状态！");
 		return false;
 	}
 	var patient_recover = $("input[name='patient_recover']:checked").val();  
 	if(patient_recover == "" || patient_recover == null || patient_recover == "null" || patient_recover == undefined)
 	{
-		alert("请选择患者目前的恢复情况！");
+		window.javatojs.alert("请选择患者目前的恢复情况！");
 		return false;
 	}
 	else
@@ -378,7 +374,7 @@ function checkParam()
 		var question_desc = $("#question_desc").val();
 		if("5" == patient_recover && (question_desc == "" || question_desc == null || question_desc == "null" || question_desc == undefined))
 		{
-			alert("请描述患者的恢复过程中出现问题的具体情况！");
+			window.javatojs.alert("请描述患者的恢复过程中出现问题的具体情况！");
 			return false;
 		}
 	}
@@ -386,32 +382,32 @@ function checkParam()
 	var activities_situation = $("input[name='activities_situation']:checked").val();  
 	if("on" == activities && (activities_situation == "" || activities_situation == null || activities_situation == "null" || activities_situation == undefined))
 	{
-		alert("请选择患者出现乏力、憋气或呼吸困难的场景！");
+		window.javatojs.alert("请选择患者出现乏力、憋气或呼吸困难的场景！");
 		return false;
 	}
 	var oral = $("#oral").val();
 	var oral_purple = $("input[name='oral_purple']:checked").val();  
 	if("on" == oral && (oral_purple == "" || oral_purple == null || oral_purple == "null" || oral_purple == undefined))
 	{
-		alert("请选择患者出现口唇发紫的具体情况！");
+		window.javatojs.alert("请选择患者出现口唇发紫的具体情况！");
 		return false;
 	}
 	var daily_milk = $("#daily_milk").val();
 	if(daily_milk == "" || daily_milk == null || daily_milk == "null" || daily_milk == undefined)
 	{
-		alert("请输入儿童每日的牛奶摄入量！");
+		window.javatojs.alert("请输入儿童每日的牛奶摄入量！");
 		return false;
 	}
 	var interrupt_flag = $("#interrupt_flag").val();
 	if(interrupt_flag == "" || interrupt_flag == null || interrupt_flag == "null" || interrupt_flag == undefined)
 	{
-		alert("请选择儿童的牛奶是否容易中断！");
+		window.javatojs.alert("请选择儿童的牛奶是否容易中断！");
 		return false;
 	}
 	var study_result = $("input[name='study_result']:checked").val();
 	if(study_result == "" || study_result == null || study_result == "null" || study_result == undefined)
 	{
-		alert("请选择儿童的学习成绩情况！");
+		window.javatojs.alert("请选择儿童的学习成绩情况！");
 		return false;
 	}
 	return true;

@@ -69,18 +69,23 @@ public class HisHttpUtil
 		String sql="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where patient_id='PID000251940' order by check_type";
 
 		String sql6="select  top 1 * from view_ssqk_app";
-		String sql1="select  top 10 * from mzbrxx";
+		String sql1="select  top 10 patient_name,patient_id from mzbrxx where  patient_id='PID000595293'";
 		String sql2="select  top 10 * from view_lx_result_app ";
 		String sql5="select  convert(varchar(10),check_time,110) check_time from  view_lis_lx_app where patient_id='PID000100014' group by convert(varchar(10),check_time,110)";
 		
 		String sql3="select  * from mzbrxx where patient_id='PID000000014' and identity_id='420102400905311   '";
 		String sql4="select  * from mzbrxx where patient_id='PID000000014'";
-		String sql7="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where patient_id='PID000251940' and convert(varchar(10),check_time,110)='12-05-2014' order by check_type";
+		String sql7="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where patient_id='PID000251940' and convert(varchar(10),check_time,110)='12-05-2014' order by check_type asc";
 		String sqlss="select  * from view_lis_result_app  where patient_id='PID000251940'";
 		String sqlsss="select  distinct(check_type_id),check_type from  view_lis_lx_app where patient_id='PID000595293'";
 		String ssss="select check_type,check_type_id from view_lis_result_app where    patient_id='PID000251940'";
 		String ssssss="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where check_type_id=291 patient_id='PID000251940' and convert(varchar(10),check_time,110)='12-05-2014' ";
-		String retVal = HisHttpUtil.http(ssssss);
+		String a=" select  convert(varchar(10),check_time,102) check_time from  view_lis_lx_app where patient_id='PID000595293' group by convert(varchar(10),check_time,102)  order by check_time desc ";
+		String b="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,102) check_time from view_lis_result_app where      convert(varchar(10),check_time,102)='2015.01.14' ";
+		String retVal = HisHttpUtil.http(sql1);
 		System.err.println(retVal);
+//		String patientId="PID000251940";
+//		patientId=patientId.substring(patientId.length()-6,patientId.length());
+//		System.out.println(patientId);
 	}
 }

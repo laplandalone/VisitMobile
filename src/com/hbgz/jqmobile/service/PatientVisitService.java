@@ -23,6 +23,13 @@ public class PatientVisitService
 		return JSONArray.fromObject(retVal);
 	}
 	
+	public JSONArray getUserWakeById(String visitId) throws Exception
+	{
+		String params = "param={channel:\"Q\",channelType:\"PC\",serviceType:\"BUS20051\",securityCode:\"0000000000\",params:{visitId:\""+visitId+"\"},rtnDataFormatType:\"user-defined\"}";
+		String retVal = HttpUtil.http(params);
+		return JSONArray.fromObject(retVal);
+	}
+	
 	public JSONObject qryPatientVisitById(String visitId) throws Exception
 	{
 		String params = "param={channel:\"Q\",channelType:\"PC\",serviceType:\"BUS3003\",securityCode:\"0000000000\",params:{visitId:\""+visitId+"\"},rtnDataFormatType:\"user-defined\"}";

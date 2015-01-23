@@ -17,6 +17,7 @@ function isNumber(obj)
 	}
 	if(!flag)
 	{
+		window.javatojs.alert("请输入数字！");
 		obj.value = "";
 	}
 }
