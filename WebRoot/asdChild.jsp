@@ -111,11 +111,28 @@
 			          				<label for="blue">有，较术前重</label><input onclick='controlfocus(id)' type="radio" name="oral_purple" id="blue" value="2">	
 								</fieldset>
 							</div>
-							<label for="ascites">有无腹水：</label>
-							<select name="ascites" id="ascites" data-role="slider">
-								<option value="on">有</option>
-	     				 		<option value="off" selected="selected">无</option>
-							</select>
+							<table style="width: 100%">
+								<tr>
+									<td width="36%"><label for="pericardial_effusion">有无心包积液：</label></td>
+									<td width="64%">
+										<select name="pericardial_effusion" id="pericardial_effusion" data-role="slider">
+											<option value="on">有</option>
+				     				 		<option value="off" selected="selected">无</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+							<table style="width: 100%">
+								<tr>
+									<td width="36%"><label for="pleural_effusion">有无胸腔积液：</label></td>
+									<td width="64%">
+										<select name="pleural_effusion" id="pleural_effusion" data-role="slider">
+											<option value="on">有</option>
+				     				 		<option value="off" selected="selected">无</option>
+										</select>
+									</td>
+								</tr>
+							</table>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
@@ -132,34 +149,16 @@
 									</td>
 								</tr>
 								<tr>
-									<td colspan="2">（地高辛，西地兰等）</td>
+									<td colspan="2">（地高辛）</td>
 								</tr>
 							</table>
-							<table style="width: 100%">
-								<tr>
-									<td width="30%"><label for="diuretics">利尿剂：</label></td>
-									<td width="70%">
-										<select name="diuretics" id="diuretics" data-role="slider">
-											<option value="on">是</option>
-					     				 	<option value="off" selected="selected">否</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2">（速尿，安体舒通，氨苯喋啶，拖拉噻咪，双氢克尿噻等）</td>
-								</tr>
-							</table>
-							<table style="width: 100%">
-								<tr>
-									<td width="30%"><label for="aspirin">阿司匹林：</label></td>
-									<td width="70%">
-										<select name="aspirin" id="aspirin" data-role="slider">
-											<option value="on">是</option>
-					     				 	<option value="off" selected="selected">否</option>
-										</select>
-									</td>
-								</tr>
-							</table>
+							<div data-role="fieldcontain" style="display: none;" id="sampleRehmanniaDiv">
+								<label for="extremity_edema">症状：是否有黄视（视物有黄色阴影）</label>
+								<select name="yellow_shadow_flag" id="yellow_shadow_flag" data-role="slider">
+									<option value="on">是</option>
+		     				 		<option value="off" selected="selected">否</option>
+								</select>
+							</div>
 							<table style="width: 100%">
 								<tr>
 									<td width="30%"><label for="anticoagulants">抗凝药：</label></td>
@@ -171,7 +170,28 @@
 									</td>
 								</tr>
 								<tr>
-									<td colspan="2">（华法令，法安明，克赛，肝素等）</td>
+									<td colspan="2">（华法令，阿司匹林）</td>
+								</tr>
+							</table>
+							<div data-role="fieldcontain" style="display: none;" id="anticoagulantsDiv">
+								<label for="extremity_edema">症状：是否牙龈出血</label>
+								<select name="bleeding_gums_flag" id="bleeding_gums_flag" data-role="slider">
+									<option value="on">是</option>
+		     				 		<option value="off" selected="selected">否</option>
+								</select>
+							</div>
+							<table style="width: 100%">
+								<tr>
+									<td width="30%"><label for="diuretics">利尿剂：</label></td>
+									<td width="70%">
+										<select name="diuretics" id="diuretics" data-role="slider">
+											<option value="on">是</option>
+					     				 	<option value="off" selected="selected">否</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">（速尿，安体舒通，双氢克尿噻）</td>
 								</tr>
 							</table>
 							<table style="width: 100%">
@@ -185,14 +205,20 @@
 									</td>
 								</tr>
 								<tr>
-									<td colspan="2">（补达秀，果味钾）</td>
+									<td colspan="2">（氯化钾缓释片，果味钾）</td>
 								</tr>
 							</table>
 						</div>
 					</li>
 					<li data-role="fieldcontain">
 						<div data-role="fieldcontain">
-							<label for="extremity_edema">六、双下肢是否有水肿：</label>
+							<fieldset data-role="controlgroup">
+								<legend>六、每日小便量：</legend>
+								<label for="urine_daily_amount0">少</label><input onclick='controlfocus(id)' type="radio" name="urine_daily_amount" id="urine_daily_amount0" value="0">
+			          			<label for="urine_daily_amount1">多</label><input onclick='controlfocus(id)' type="radio" name="urine_daily_amount" id="urine_daily_amount1" value="1">
+			          			<label for="urine_daily_amount2">一般</label> <input  onclick='controlfocus(id)' type="radio" name="urine_daily_amount" id="urine_daily_amount2" value="2">
+							</fieldset>
+							<label for="extremity_edema">双下肢是否有水肿：</label>
 							<select name="extremity_edema" id="extremity_edema" data-role="slider">
 								<option value="on">是</option>
 	     				 		<option value="off" selected="selected">否</option>
@@ -213,11 +239,25 @@
 									<td><label for="red">毫升</label></td>
 								</tr>
 							</table>
-							<label for="interrupt_flag">是否容易中断：</label>
+							<label for="interrupt_flag">吃奶是否容易中断：</label>
 							<select name="interrupt_flag" id="interrupt_flag" data-role="slider">
 								<option value="on">是</option>
 	     				 		<option value="off" selected="selected">否</option>
 							</select>
+							<label for="interrupt_flag">是否容易肺炎：</label>
+							<select name="pneumonia_flag" id="pneumonia_flag" data-role="slider">
+								<option value="on">是</option>
+	     				 		<option value="off" selected="selected">否</option>
+							</select>
+							<div data-role="fieldcontain" style="display: none;" id="pneumoniaDiv">
+								<table>
+									<tr>
+										<td><label for="red">一年患肺炎</label></td>
+										<td><input type="text" name="pneumonia_number" id="pneumonia_number" onblur="isNumber(this)"></td>
+										<td><label for="red">次</label></td>
+									</tr>
+								</table>
+							</div>
 							<fieldset data-role="controlgroup">
 								<legend>儿童学习成绩如何：</legend>
 								<label for="red">好</label><input onclick='controlfocus(id)'     type="radio" name="study_result" id="red" value="0">
@@ -302,6 +342,39 @@ $(document).ready(function(){
 		else
 		{
 			$("#oralPurpleDiv").css("display", "none");
+		}
+	});
+	
+	$("#sample_rehmannia").change(function(){
+		if("on" == $(this).val())
+		{
+			$("#sampleRehmanniaDiv").css("display", "block");
+		}
+		else
+		{
+			$("#sampleRehmanniaDiv").css("display", "none");
+		}
+	});
+	
+	$("#anticoagulants").change(function(){
+		if("on" == $(this).val())
+		{
+			$("#anticoagulantsDiv").css("display", "block");
+		}
+		else
+		{
+			$("#anticoagulantsDiv").css("display", "none");
+		}
+	});
+	
+	$("#pneumonia_flag").change(function(){
+		if("on" == $(this).val())
+		{
+			$("#pneumoniaDiv").css("display", "block");
+		}
+		else
+		{
+			$("#pneumoniaDiv").css("display", "none");
 		}
 	});
 });
@@ -392,6 +465,26 @@ function checkParam()
 		window.javatojs.alert("请选择患者出现口唇发紫的具体情况！");
 		return false;
 	}
+	var sample_rehmannia = $("#sample_rehmannia").val();
+	var yellow_shadow_flag = $("#yellow_shadow_flag").val();
+	if("on" == sample_rehmannia && (yellow_shadow_flag == "" || yellow_shadow_flag == null || yellow_shadow_flag == "null" || yellow_shadow_flag == undefined))
+	{
+		alert("请选择是否有黄视即视物有黄色阴影的症状！");
+		return false;
+	}
+	var anticoagulants = $("#anticoagulants").val();
+	var bleeding_gums_flag = $("#bleeding_gums_flag").val();
+	if("on" == anticoagulants && (bleeding_gums_flag == "" || bleeding_gums_flag == null || bleeding_gums_flag == "null" || bleeding_gums_flag == undefined))
+	{
+		alert("请选择是否出现牙龈出血的症状！");
+		return false;
+	}
+	var urine_daily_amount = $("input[name='urine_daily_amount']:checked").val();
+	if(urine_daily_amount == "" || urine_daily_amount == null || urine_daily_amount == "null" || urine_daily_amount == undefined)
+	{
+		alert("请选择每日小便量！");
+		return false;
+	}
 	var daily_milk = $("#daily_milk").val();
 	if(daily_milk == "" || daily_milk == null || daily_milk == "null" || daily_milk == undefined)
 	{
@@ -402,6 +495,13 @@ function checkParam()
 	if(interrupt_flag == "" || interrupt_flag == null || interrupt_flag == "null" || interrupt_flag == undefined)
 	{
 		window.javatojs.alert("请选择儿童的牛奶是否容易中断！");
+		return false;
+	}
+	var pneumonia_flag = $("#pneumonia_flag").val();
+	var pneumonia_number = $("#pneumonia_number").val();
+	if("on" == pneumonia_flag && (pneumonia_number == "" || pneumonia_number == null || pneumonia_number == "null" || pneumonia_number == undefined))
+	{
+		alert("请输入一年患肺炎的次数！");
 		return false;
 	}
 	var study_result = $("input[name='study_result']:checked").val();
