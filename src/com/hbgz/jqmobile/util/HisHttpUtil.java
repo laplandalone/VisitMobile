@@ -8,6 +8,8 @@ import java.net.URL;
 public class HisHttpUtil 
 {
 	private static String urls="http://27.17.0.42:10821/his/mobile.htm?method=axis&param=";
+//	private static String urls="http://mobilemedical.net.cn:10821/his/mobile.htm?method=axis&param=";
+	
 	public static String http(String param) throws Exception
 	{
 		URL u = null;
@@ -68,7 +70,8 @@ public class HisHttpUtil
 	{
 		String sql="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where patient_id='PID000251940' order by check_type";
 
-		String sql6="select  top 1 * from view_ssqk_app";
+		String sql6="select  top 10000 convert(varchar(10),operation_time,102) operation_time,patient_id from view_ssqk_app   order by operation_time desc";
+		
 		String sql1="select  top 10 patient_name,patient_id from mzbrxx where  patient_id='PID000595293'";
 		String sql2="select  top 10 * from view_lx_result_app ";
 		String sql5="select  convert(varchar(10),check_time,110) check_time from  view_lis_lx_app where patient_id='PID000100014' group by convert(varchar(10),check_time,110)";
@@ -82,7 +85,7 @@ public class HisHttpUtil
 		String ssssss="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,110) check_time from view_lis_result_app where check_type_id=291 patient_id='PID000251940' and convert(varchar(10),check_time,110)='12-05-2014' ";
 		String a=" select  convert(varchar(10),check_time,102) check_time from  view_lis_lx_app where patient_id='PID000595293' group by convert(varchar(10),check_time,102)  order by check_time desc ";
 		String b="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,102) check_time from view_lis_result_app where      convert(varchar(10),check_time,102)='2015.01.14' ";
-		String retVal = HisHttpUtil.http(sql1);
+		String retVal = HisHttpUtil.http(sql6);
 		System.err.println(retVal);
 //		String patientId="PID000251940";
 //		patientId=patientId.substring(patientId.length()-6,patientId.length());
