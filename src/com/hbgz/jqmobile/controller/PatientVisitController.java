@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.hbgz.jqmobile.service.PatientVisitService;
 import com.hbgz.jqmobile.util.HisHttpUtil;
+import com.hbgz.jqmobile.util.StringUtil;
 
 @Controller
 @RequestMapping("/patientVisit.do")
@@ -88,13 +89,50 @@ public class PatientVisitController
 		try 
 		{
 			out = response.getWriter();
-			String sql="select card_id,sample_type,patient_id,check_scope,check_unit,check_name,department,check_result,check_type,convert(varchar(10),check_time,102) check_time from view_lis_result_app where check_type_id="+checkTypeId+" and  patient_id='"+patientId+"' and convert(varchar(10),check_time,102)='"+checkTime+"'";
+			String sql="select card_id,sample_type,patient_id,rtrim(check_scope)check_scope,check_unit,check_name,department,rtrim(check_result)check_result,check_type,convert(varchar(10),check_time,102) check_time from view_lis_result_app where check_type_id="+checkTypeId+" and  patient_id='"+patientId+"' and convert(varchar(10),check_time,102)='"+checkTime+"'";
 			String retVal = HisHttpUtil.http(sql);
 			JSONArray array = JSONArray.fromObject(retVal);
-			JSONObject object = new JSONObject();
-			object.put("results", array);
-			out.println(object);
-		} 
+			if(array!=null && array.size()>0)
+			{
+				for(int i=0;i<array.size();i++)
+				{
+					JSONObject object= array.getJSONObject(i);
+					String check_result=object.getString("check_result");
+					String check_scope=object.getString("check_scope");
+					double rst=0;
+					double d1=0;
+					double d2=0;
+					if(StringUtil.checkStringIsNum(check_result))
+					{
+						rst=Double.parseDouble(check_result);
+					}
+					String[] scopes=check_scope.split("-");
+					if(scopes!=null && scopes.length==2)
+					{
+							String s1=scopes[0];
+							String s2=scopes[1];
+							if(StringUtil.checkStringIsNum(s1) && StringUtil.checkStringIsNum(s2))
+							{
+								d1=Double.parseDouble(s1);
+								d2=Double.parseDouble(s2);
+							}
+					}
+					String rstFlag="0";/*0:是正常  1:低值  2：高值*/
+					if(rst<d1)
+					{
+						rstFlag="1";
+					}else
+					if(rst>d2)
+					{
+						rstFlag="2";
+					} 
+					object.put("rst_flag", rstFlag);
+				}
+				JSONObject object = new JSONObject();
+				object.put("results", array);
+				out.println(object);
+			} 
+		}
 		catch (Exception e) 
 		{
 			e.printStackTrace();

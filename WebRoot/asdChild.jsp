@@ -140,7 +140,7 @@
 							<legend>五、是否使用下列药物：</legend>
 							<table style="width: 100%">
 								<tr>
-									<td width="30%"><label for="sample_rehmannia">样地黄类：</label></td>
+									<td width="30%"><label for="sample_rehmannia">洋地黄类：</label></td>
 									<td width="70%">
 										<select name="sample_rehmannia" id="sample_rehmannia" data-role="slider">
 											<option value="on">是</option>
@@ -260,9 +260,9 @@
 							</div>
 							<fieldset data-role="controlgroup">
 								<legend>儿童学习成绩如何：</legend>
-								<label for="red">好</label><input onclick='controlfocus(id)'     type="radio" name="study_result" id="red" value="0">
-								<label for="black">一般</label><input onclick='controlfocus(id)'   type="radio" name="study_result" id="black" value="1">
-		          				<label for="green">差</label><input onclick='controlfocus(id)'   type="radio" name="study_result" id="green" value="2">
+								<label for="study_result0">好</label><input onclick='controlfocus(id)'     type="radio" name="study_result" id="study_result0" value="0">
+								<label for=study_result1>一般</label><input onclick='controlfocus(id)'   type="radio" name="study_result" id="study_result1" value="1">
+		          				<label for="study_result2">差</label><input onclick='controlfocus(id)'   type="radio" name="study_result" id="study_result2" value="2">
 							</fieldset>
 						</div>
 					</li>
@@ -469,20 +469,20 @@ function checkParam()
 	var yellow_shadow_flag = $("#yellow_shadow_flag").val();
 	if("on" == sample_rehmannia && (yellow_shadow_flag == "" || yellow_shadow_flag == null || yellow_shadow_flag == "null" || yellow_shadow_flag == undefined))
 	{
-		alert("请选择是否有黄视即视物有黄色阴影的症状！");
+		window.javatojs.alert("请选择是否有黄视即视物有黄色阴影的症状！");
 		return false;
 	}
 	var anticoagulants = $("#anticoagulants").val();
 	var bleeding_gums_flag = $("#bleeding_gums_flag").val();
 	if("on" == anticoagulants && (bleeding_gums_flag == "" || bleeding_gums_flag == null || bleeding_gums_flag == "null" || bleeding_gums_flag == undefined))
 	{
-		alert("请选择是否出现牙龈出血的症状！");
+		window.javatojs.alert("请选择是否出现牙龈出血的症状！");
 		return false;
 	}
 	var urine_daily_amount = $("input[name='urine_daily_amount']:checked").val();
 	if(urine_daily_amount == "" || urine_daily_amount == null || urine_daily_amount == "null" || urine_daily_amount == undefined)
 	{
-		alert("请选择每日小便量！");
+		window.javatojs.alert("请选择每日小便量！");
 		return false;
 	}
 	var daily_milk = $("#daily_milk").val();
@@ -501,7 +501,7 @@ function checkParam()
 	var pneumonia_number = $("#pneumonia_number").val();
 	if("on" == pneumonia_flag && (pneumonia_number == "" || pneumonia_number == null || pneumonia_number == "null" || pneumonia_number == undefined))
 	{
-		alert("请输入一年患肺炎的次数！");
+		window.javatojs.alert("请输入一年患肺炎的次数！");
 		return false;
 	}
 	var study_result = $("input[name='study_result']:checked").val();

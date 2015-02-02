@@ -70,7 +70,7 @@
         <br />
          <div class="overlay">&nbsp;</div>
 <div class="showbox" id="AjaxLoading">
-<div class="loadingWord" style="overflow:hidden;zoom:1"  align="center"><img src="/visit//images/loadingx.gif" alt="" style="padding-top:6px;"/></div>
+<div class="loadingWord" style="overflow:hidden;zoom:1"  align="center"><img src="/visit/images/loadingx.gif" alt="" style="padding-top:6px;"/></div>
 </div>
 </body>
 </html>

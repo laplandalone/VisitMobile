@@ -142,7 +142,6 @@ a:hover
 .mq_con_list a:hover{ color:#333;}
 .mq_con_list ul{ overflow:hidden;}
 .mq_con_list li{margin:0 15px; padding:15px 0; border-bottom:1px dashed #ddd; position:relative; overflow:hidden; position:relative;}
-.mq_con_list li:after { content:' ';position:absolute;top:50%;margin-top:-3px;right:15px;width:6px;height:6px;border:#aaa solid;border-width: 2px 2px 0 0;}
 
 .mq_con_list dl{ float:left;}
 .mq_con_list dl.mq_img{ width:60px; float:left;}

@@ -73,7 +73,16 @@ function qryPatientVisit()
 				
 				content+="<li><dl class='mq_word'>";
 				i=i+1;
-	   			content+="<dd>检查项目:"+obj.check_name+"</dd><dd>检查结果:"+obj.check_result+"</dd><dd>参考范围:"+obj.check_scope+"</dd><dd>计量单位:"+obj.check_unit+"</dd>";
+	   			content+="<dd>检查项目:"+obj.check_name+"</dd><dd>检查结果:"+obj.check_result;
+	   			 
+	   			if(obj.rst_flag=='1')
+	   			{ 
+	   				content+="  <img src='/visit/images/down.png' width='10' heigth='10'/></dd>";
+		    	}else if(obj.rst_flag=='2')
+		    	{
+		    		content+="  <img src='/visit/images/up.png' width='10' heigth='10'/></dd>";
+		    	}
+	   			content+="<dd>参考范围:"+obj.check_scope+"</dd><dd>计量单位:"+obj.check_unit+"</dd>";
 	   			content+="</dl></li>";
 	   			
 			});
