@@ -61,6 +61,7 @@
          </li>
      </div>
  	</div>
+ 	
  	<div id="rstDiv" style="display:none;">
         <div class="hot_com" >
             <h4> 诊断结果</h4>
@@ -125,7 +126,7 @@
 		   	   					{
 		   	   						continue;
 		   	   					}
-		   	   					content+="<img onclick=showImg('"+imgUrl+"') src='http://123.57.78.38:10841"+imgUrl+"' width='60px' height='60px' border='0'/>       ";
+		   	   					content+="<img onclick=showImg('"+imgUrl+"') src='http://www.hiseemedical.com:10821"+imgUrl+"' width='60px' height='60px' border='0'/>       ";
 		   	   				}
 		   	   				content+="</dl>";
 		   	   			}

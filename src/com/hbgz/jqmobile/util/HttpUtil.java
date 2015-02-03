@@ -9,9 +9,9 @@ import java.net.URL;
 import net.sf.json.JSONArray;
 public class HttpUtil 
 {
-//	private static final String url = "http://hiseemedical.com:10821/mobile.htm?method=axis";
+	private static final String url = "http://hiseemedical.com:10821/mobile.htm?method=axis";
 	
-	private static final String url = "http://123.57.78.38:10841/mobile.htm?method=axis";
+//	private static final String url = "http://123.57.78.38:10841/mobile.htm?method=axis";
 	
 //	private static final String url = "http://localhost:7001/mobile.htm?method=axis";
 	
